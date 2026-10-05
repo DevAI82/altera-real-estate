@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Propuesta Estratégica para Izon Consulting | Solución IA 24/7 & CRM Inmobiliario</title>
+  
+  <!-- SEO & Social Meta (Optimizado para compartir en WhatsApp) -->
+  <meta name="description" content="Presentación interactiva para Izon Consulting: Chatbot WhatsApp IA 24/7, Contestador de Voz ElevenLabs y CRM Inmobiliario con Radar de Mercado en tiempo real conectado a Idealista.">
+  <meta property="og:title" content="Izon Consulting × Sistema Inteligente 24/7 y CRM Inmobiliario">
+  <meta property="og:description" content="Descubre cómo automatizar la atención de compradores y propietarios 24/7, agendar visitas en piloto automático y comparar precios en vivo con Idealista.">
+  <meta property="og:image" content="https://www.izonconsulting.es/wp-content/uploads/2019/03/logo-izon-consulting.png">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              navy: '#1e293b',
+              dark: '#0a0f1d',
+              card: '#111827',
+              border: '#1f293d',
+              blue: '#47a3da',
+              blueDark: '#2589c5',
+              cyan: '#38bdf8',
+              emerald: '#10b981',
+              amber: '#f59e0b',
+              purple: '#8b5cf6'
+            }
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          boxShadow: {
+            'glow-blue': '0 0 35px -5px rgba(71, 163, 218, 0.35)',
+            'glow-emerald': '0 0 35px -5px rgba(16, 185, 129, 0.35)',
+            'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Estilos personalizados para animaciones y estética premium */
+    body {
+      background-color: #080c16;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+    }
+    
+    /* Gradiente radial de fondo con textura */
+    .bg-mesh {
+      background-image: 
+        radial-gradient(at 10% 20%, rgba(71, 163, 218, 0.12) 0px, transparent 50%),
+        radial-gradient(at 90% 10%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+        radial-gradient(at 50% 80%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+    }
+
+    /* Animación de pulso de radar */
+    @keyframes radarPulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.05); opacity: 0.4; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+    .animate-radar {
+      animation: radarPulse 3s infinite ease-in-out;
+    }
+
+    /* Scrollbar estilizada */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0f1d;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #47a3da;
+    }
+
+    /* Burbujas de chat WhatsApp */
+    .chat-bubble-in {
+      border-radius: 0px 14px 14px 14px;
+      background: #1f2c34;
+    }
+    .chat-bubble-out {
+      border-radius: 14px 0px 14px 14px;
+      background: #005c4b;
+    }
+
+    /* Visualizador de ondas de audio */
+    .audio-bar {
+      transition: height 0.15s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-mesh antialiased min-h-screen">
+
+  <!-- ================= TOP NOTICE BAR ================= -->
+  <div class="bg-gradient-to-r from-slate-900 via-brand-navy to-slate-900 border-b border-slate-800 text-xs py-2 px-4 sticky top-0 z-50 backdrop-blur-md bg-opacity-90">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-emerald opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-brand-emerald"></span>
+        </span>
+        <span class="text-slate-300 font-medium">Propuesta Tecnológica Exclusiva para:</span>
+        <strong class="text-white bg-slate-800 px-2 py-0.5 rounded border border-slate-700">Izon Consulting Albacete</strong>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#simulador" class="text-brand-blue hover:text-white transition-colors flex items-center gap-1 font-medium">
+          <span>Probar Simulador WhatsApp</span>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex items-center justify-between">
+    <div class="flex items-center gap-4">
+      <div class="bg-white/95 px-3 py-1.5 rounded-lg shadow-md border border-white/20 flex items-center">
+        <img src="https://www.izonconsulting.es/wp-content/uploads/2019/03/logo-izon-consulting.png" alt="Izon Consulting" class="h-8 object-contain">
+      </div>
+      <div class="hidden sm:block border-l border-slate-700 pl-4">
+        <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Transformación Digital Inmobiliaria</p>
+        <p class="text-xs text-brand-blue font-medium">Albacete • 24/7</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-3">
+      <a href="#contacto-demo" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold rounded-lg bg-brand-navy border border-slate-700 hover:border-brand-blue text-slate-200 hover:text-white transition-all">
+        Ver Roadmap Fases
+      </a>
+      <a href="#simulador" class="inline-flex items-center justify-center px-4 py-2 text-xs font-bold rounded-lg bg-brand-blue hover:bg-brand-blueDark text-white shadow-glow-blue transition-all transform hover:-translate-y-0.5">
+        <span>Simulador en Directo</span>
+        <svg class="w-3.5 h-3.5 ml-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 lg:pt-16 lg:pb-24">
+    <div class="text-center max-w-4xl mx-auto">
+      
+      <!-- Badge de Impacto -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-navy/80 border border-brand-blue/30 text-brand-blue text-xs font-semibold mb-6 shadow-sm">
+        <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        <span>Solución Integral para Izon Consulting</span>
+        <span class="text-slate-400">•</span>
+        <span class="text-brand-emerald font-bold">100% Personalizado</span>
+      </div>
+
+      <!-- Titular Principal -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-display tracking-tight text-white leading-tight mb-6">
+        Nunca más un cliente <br class="hidden sm:block">
+        <span class="bg-gradient-to-r from-brand-blue via-brand-cyan to-brand-emerald bg-clip-text text-transparent">
+          o propietario sin atender
+        </span> 
+        en Albacete
+      </h1>
+
+      <!-- Subtítulo -->
+      <p class="text-base sm:text-xl text-slate-300 font-normal leading-relaxed mb-8 max-w-3xl mx-auto">
+        Multiplica la captación y cierre de operaciones en <strong>Izon Consulting</strong> combinando 
+        <span class="text-white font-semibold">Chatbot de WhatsApp 24/7</span>, 
+        <span class="text-white font-semibold">Contestador de Voz Inteligente (ElevenLabs)</span> y un 
+        <span class="text-white font-semibold">Radar en Tiempo Real conectado con Idealista</span> para demostrar oportunidades imbatibles.
+      </p>
+
+      <!-- Botones de Acción -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+        <a href="#simulador" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-blueDark hover:from-brand-blueDark hover:to-brand-blue text-white font-bold text-sm shadow-glow-blue transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+          <span>Interactuar con el WhatsApp Demo</span>
+        </a>
+        <a href="#voz-elevenlabs" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-brand-card hover:bg-slate-800 text-slate-200 hover:text-white font-semibold text-sm border border-slate-700 transition-all flex items-center justify-center gap-2">
+          <svg class="w-5 h-5 text-brand-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path></svg>
+          <span>Escuchar Voz ElevenLabs</span>
+        </a>
+      </div>
+
+      <!-- Métricas Clave de Negocio -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-sm text-center">
+          <p class="text-2xl sm:text-3xl font-extrabold text-white font-display">24/7</p>
+          <p class="text-xs text-slate-400 mt-1 font-medium">Atención instantánea sin esperas</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-sm text-center">
+          <p class="text-2xl sm:text-3xl font-extrabold text-brand-emerald font-display">&lt; 3 seg</p>
+          <p class="text-xs text-slate-400 mt-1 font-medium">Tiempo de respuesta a clientes</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-sm text-center">
+          <p class="text-2xl sm:text-3xl font-extrabold text-brand-blue font-display">+38%</p>
+          <p class="text-xs text-slate-400 mt-1 font-medium">Visitas físicas agendadas</p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800 backdrop-blur-sm text-center">
+          <p class="text-2xl sm:text-3xl font-extrabold text-brand-amber font-display">100%</p>
+          <p class="text-xs text-slate-400 mt-1 font-medium">Llamadas y chats recuperados</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 1: SIMULADOR INTERACTIVO WHATSAPP ================= -->
+  <section id="simulador" class="py-16 bg-slate-950/70 border-y border-slate-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full border border-brand-emerald/20">Fase 1: Experiencia en Directo</span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-display text-white mt-3">
+          Simulador del Chatbot de WhatsApp para Izon
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Haz clic en las preguntas frecuentes a la izquierda o escribe cualquier consulta para ver cómo respondería el agente inteligente a tus clientes.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Columna Izquierda: Botones de Prueba Rápida -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="bg-brand-card p-6 rounded-2xl border border-slate-800 shadow-glass">
+            <h3 class="text-base font-bold text-white flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-brand-blue"></span>
+              Prueba un caso de uso real:
+            </h3>
+            <p class="text-xs text-slate-400 mb-4">
+              Pulsa cualquiera de estas opciones para ver la respuesta inmediata con datos y precios:
+            </p>
+
+            <div class="space-y-2.5">
+              <button onclick="enviarMensajeSimulado('pisos_ensanche')" class="w-full text-left p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-brand-blue text-xs transition-all group flex items-start justify-between">
+                <div>
+                  <strong class="text-white block group-hover:text-brand-blue transition-colors">🏢 "Busco piso 3 hab en el Ensanche de Albacete"</strong>
+                  <span class="text-slate-400 text-[11px] block mt-0.5">Muestra fotos reales, precio/m² y comparación de mercado.</span>
+                </div>
+                <span class="text-brand-blue opacity-0 group-hover:opacity-100 transition-opacity ml-2">➔</span>
+              </button>
+
+              <button onclick="enviarMensajeSimulado('agendar_visita')" class="w-full text-left p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-brand-emerald text-xs transition-all group flex items-start justify-between">
+                <div>
+                  <strong class="text-white block group-hover:text-brand-emerald transition-colors">📅 "Quiero agendar una visita este jueves con Lucía"</strong>
+                  <span class="text-slate-400 text-[11px] block mt-0.5">Sincroniza agenda del asesor y bloquea cita confirmada.</span>
+                </div>
+                <span class="text-brand-emerald opacity-0 group-hover:opacity-100 transition-opacity ml-2">➔</span>
+              </button>
+
+              <button onclick="enviarMensajeSimulado('valorar_piso')" class="w-full text-left p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-brand-amber text-xs transition-all group flex items-start justify-between">
+                <div>
+                  <strong class="text-white block group-hover:text-brand-amber transition-colors">📊 "Tengo un piso en Zona Altozano y quiero valorarlo"</strong>
+                  <span class="text-slate-400 text-[11px] block mt-0.5">Consulta la API de Idealista en tiempo real y da rango medio.</span>
+                </div>
+                <span class="text-brand-amber opacity-0 group-hover:opacity-100 transition-opacity ml-2">➔</span>
+              </button>
+
+              <button onclick="enviarMensajeSimulado('planos_ficha')" class="w-full text-left p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700/80 hover:border-brand-purple text-xs transition-all group flex items-start justify-between">
+                <div>
+                  <strong class="text-white block group-hover:text-brand-purple transition-colors">📐 "¿Tenéis la ficha técnica y el plano de distribución?"</strong>
+                  <span class="text-slate-400 text-[11px] block mt-0.5">Entrega documentos y certificados energéticos en PDF directo.</span>
+                </div>
+                <span class="text-brand-purple opacity-0 group-hover:opacity-100 transition-opacity ml-2">➔</span>
+              </button>
+            </div>
+
+            <!-- Caja de Valor Añadido -->
+            <div class="mt-6 pt-5 border-t border-slate-800/80">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-emerald/10 border border-brand-emerald/20 flex items-center justify-center text-brand-emerald flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <div>
+                  <p class="text-xs font-semibold text-white">Cero esfuerzo para el equipo</p>
+                  <p class="text-[11px] text-slate-400">El asesor solo atiende a leads calificados con fecha y hora ya cerrada.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Mockup Interactivo del Móvil -->
+        <div class="lg:col-span-7 flex justify-center">
+          
+          <div class="w-full max-w-[400px] bg-[#0b141a] rounded-[36px] p-3 shadow-2xl border-4 border-slate-700/60 relative">
+            <!-- Altavoz / Notch Superior -->
+            <div class="w-32 h-4 bg-slate-800 rounded-full mx-auto mb-2 flex items-center justify-center">
+              <div class="w-12 h-1 bg-slate-600 rounded-full"></div>
+            </div>
+
+            <!-- Pantalla del Smartphone -->
+            <div class="bg-[#0b141a] rounded-[28px] overflow-hidden flex flex-col h-[580px] border border-slate-800 text-slate-100">
+              
+              <!-- Cabecera WhatsApp -->
+              <div class="bg-[#202c33] px-3.5 py-2.5 flex items-center justify-between border-b border-slate-700/50">
+                <div class="flex items-center gap-2.5">
+                  <div class="relative">
+                    <img src="https://www.izonconsulting.es/wp-content/uploads/2019/03/logo-izon-consulting.png" alt="Izon" class="w-9 h-9 rounded-full bg-white object-contain p-0.5 border border-slate-600">
+                    <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-500 border border-[#202c33]"></span>
+                  </div>
+                  <div>
+                    <h4 class="text-xs font-bold text-white flex items-center gap-1.5">
+                      Izon Consulting IA
+                      <svg class="w-3.5 h-3.5 text-brand-blue" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                    </h4>
+                    <p class="text-[10px] text-emerald-400 font-medium leading-none mt-0.5">En línea 24/7 • Albacete</p>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3 text-slate-400">
+                  <svg class="w-4 h-4 cursor-pointer hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                  <svg class="w-4 h-4 cursor-pointer hover:text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></svg>
+                </div>
+              </div>
+
+              <!-- Área de Mensajes del Chat -->
+              <div id="chat-messages" class="flex-1 p-3.5 space-y-3 overflow-y-auto bg-[radial-gradient(#1f293d_1px,transparent_1px)] [background-size:16px_16px]">
+                
+                <!-- Mensaje de Bienvenida -->
+                <div class="chat-bubble-in p-3 text-xs max-w-[85%] text-slate-200 shadow">
+                  <p class="font-semibold text-brand-blue mb-1">Izon Consulting Albacete:</p>
+                  <p>¡Hola! Bienvenido a Izon Consulting. Soy tu asesor inmobiliario virtual 24/7. 🏠</p>
+                  <p class="mt-1 text-slate-300">¿Deseas buscar pisos en Albacete, agendar una visita o valorar una propiedad para venta?</p>
+                  <span class="text-[9px] text-slate-400 block text-right mt-1">21:42</span>
+                </div>
+
+              </div>
+
+              <!-- Indicador de "Escribiendo..." -->
+              <div id="typing-indicator" class="hidden px-3.5 py-1 text-[11px] text-slate-400 italic flex items-center gap-1.5">
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-emerald animate-bounce"></span>
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-emerald animate-bounce [animation-delay:0.2s]"></span>
+                <span class="inline-block w-1.5 h-1.5 rounded-full bg-brand-emerald animate-bounce [animation-delay:0.4s]"></span>
+                <span class="text-slate-400 ml-1">Izon Consulting está escribiendo...</span>
+              </div>
+
+              <!-- Input del Chat -->
+              <div class="p-2.5 bg-[#202c33] border-t border-slate-700/50 flex items-center gap-2">
+                <input id="chat-input" type="text" placeholder="Escribe tu mensaje a la IA..." class="flex-1 bg-[#2a3942] text-xs text-white placeholder-slate-400 px-3.5 py-2 rounded-full focus:outline-none focus:ring-1 focus:ring-brand-blue" onkeypress="if(event.key === 'Enter') enviarMensajeUsuario()">
+                <button onclick="enviarMensajeUsuario()" class="w-8 h-8 rounded-full bg-brand-emerald hover:bg-emerald-600 flex items-center justify-center text-white flex-shrink-0 transition-colors">
+                  <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 2: CONTESTADOR ELEVENLABS ================= -->
+  <section id="voz-elevenlabs" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <div class="lg:col-span-6 space-y-5">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-blue bg-brand-blue/10 px-3 py-1 rounded-full border border-brand-blue/20">
+          Voz Hiperrealista • ElevenLabs
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-display text-white">
+          Contestador de Voz Humano para Llamadas Telefónicas Fuera de Horario
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          El 60% de los compradores llaman después de las 20:00h o en fines de semana. Un buzón de voz común hace que el cliente cuelgue y llame a otra agencia.
+        </p>
+        <p class="text-slate-400 text-sm">
+          Con la integración de <strong>ElevenLabs</strong>, una voz en español con tono cálido, empático y profesional de Albacete contesta de inmediato, resuelve dudas de la vivienda y le reserva la cita en la agenda de Lucía o Antonio.
+        </p>
+
+        <!-- Puntos Fuertes -->
+        <div class="space-y-3 pt-2">
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-xs">✓</div>
+            <p class="text-xs sm:text-sm text-slate-200"><strong>Sin esperas:</strong> Atiende hasta 50 llamadas simultáneas.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-xs">✓</div>
+            <p class="text-xs sm:text-sm text-slate-200"><strong>Cualificación automática:</strong> Pregunta presupuesto, zona y método de pago (hipoteca/contado).</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-6 h-6 rounded-full bg-brand-emerald/20 text-brand-emerald flex items-center justify-center text-xs">✓</div>
+            <p class="text-xs sm:text-sm text-slate-200"><strong>Transcripción al CRM:</strong> El comercial recibe el resumen por WhatsApp con el audio antes de llamar.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjeta Interactiva de Reproducción de Voz -->
+      <div class="lg:col-span-6">
+        <div class="bg-gradient-to-b from-brand-card to-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl relative overflow-hidden">
+          
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+            <div class="flex items-center gap-3">
+              <div class="w-11 h-11 rounded-full bg-brand-blue/20 border border-brand-blue/40 flex items-center justify-center text-brand-blue">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </div>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider">Simulación de llamada entrante</p>
+                <h4 class="text-white font-bold text-sm sm:text-base">Domingo 21:30h • Teléfono Izon: 967 66 00 05</h4>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-brand-emerald/10 text-brand-emerald text-xs font-bold border border-brand-emerald/20 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping"></span>
+              En directo
+            </span>
+          </div>
+
+          <!-- Reproductor Interactivo con Botón -->
+          <div class="bg-slate-950 p-5 rounded-2xl border border-slate-800 mb-6">
+            <div class="flex items-center gap-4">
+              <button id="btn-play-audio" onclick="toggleAudioDemo()" class="w-14 h-14 rounded-full bg-gradient-to-r from-brand-blue to-brand-emerald hover:scale-105 transition-transform flex items-center justify-center text-white shadow-glow-blue flex-shrink-0">
+                <svg id="icon-play" class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 20 20"><path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"></path></svg>
+                <svg id="icon-pause" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM7 8a1 1 0 012 0v4a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v4a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+              </button>
+
+              <div class="flex-1">
+                <div class="flex items-center justify-between text-xs text-slate-400 mb-1.5">
+                  <span class="font-medium text-slate-200">Voz Agente Virtual (Sofía - ElevenLabs)</span>
+                  <span id="audio-time">0:00 / 0:18</span>
+                </div>
+                <!-- Animación de barras de onda -->
+                <div class="flex items-center gap-1 h-8 px-2 bg-slate-900 rounded-lg" id="waveform">
+                  <div class="w-1.5 bg-brand-blue rounded-full h-2 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-blue rounded-full h-4 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-cyan rounded-full h-6 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-cyan rounded-full h-3 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-emerald rounded-full h-7 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-emerald rounded-full h-4 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-blue rounded-full h-8 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-blue rounded-full h-5 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-cyan rounded-full h-3 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-emerald rounded-full h-6 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-emerald rounded-full h-2 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-blue rounded-full h-5 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-cyan rounded-full h-7 audio-bar"></div>
+                  <div class="w-1.5 bg-brand-blue rounded-full h-3 audio-bar"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Transcripción en Directo -->
+            <div class="mt-4 p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 italic" id="transcription-text">
+              "Pulsa el botón de Play para escuchar cómo atiende la llamada telefónica con la voz oficial configurada para Izon Consulting..."
+            </div>
+          </div>
+
+          <!-- Resultado generado para el comercial -->
+          <div class="p-3.5 rounded-xl bg-brand-emerald/5 border border-brand-emerald/20 flex items-center justify-between text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-emerald"></span>
+              <span class="text-slate-300">Genera ficha automática: <strong>Lead cualificado + Visita en Google Calendar</strong></span>
+            </div>
+            <span class="text-brand-emerald font-bold">100% Automático</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 3: RADAR DE MERCADO CON IDEALISTA API ================= -->
+  <section id="radar-idealista" class="py-16 bg-slate-950/80 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-amber bg-brand-amber/10 px-3 py-1 rounded-full border border-brand-amber/20">La Clave Competitiva</span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-display text-white mt-3">
+          Radar de Oportunidades: Conexión en Vivo con Idealista
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base mt-2">
+          Gracias a la API de Idealista que acabamos de integrar, el sistema compara al instante los inmuebles de tu cartera contra la media real de la zona en Albacete para demostrar si es una oportunidad irrepetible.
+        </p>
+      </div>
+
+      <!-- Selector de Zona de Albacete -->
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
+        <button onclick="seleccionarZona('ensanche')" id="tab-ensanche" class="zona-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-blue text-white shadow-glow-blue">
+          📍 Ensanche / Circunvalación
+        </button>
+        <button onclick="seleccionarZona('centro')" id="tab-centro" class="zona-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
+          📍 Centro / Plaza del Altozano
+        </button>
+        <button onclick="seleccionarZona('parque_sur')" id="tab-parque_sur" class="zona-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
+          📍 Parque Sur / Universidad
+        </button>
+        <button onclick="seleccionarZona('villacerrada')" id="tab-villacerrada" class="zona-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800">
+          📍 Villacerrada / Feria
+        </button>
+      </div>
+
+      <!-- Cuadro de Datos en Vivo de la Zona -->
+      <div class="bg-brand-card border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-glass mb-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center border-b border-slate-800/80 pb-6 mb-6">
+          <div>
+            <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Zona seleccionada</p>
+            <h3 class="text-xl sm:text-2xl font-bold text-white font-display mt-0.5" id="zona-nombre">Ensanche - Circunvalación (Albacete)</h3>
+            <p class="text-xs text-brand-emerald flex items-center gap-1 mt-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-brand-emerald"></span>
+              Datos contrastados contra Idealista 17 API
+            </p>
+          </div>
+
+          <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800">
+            <p class="text-xs text-slate-400">Precio Medio Idealista en esta Zona:</p>
+            <p class="text-2xl font-extrabold text-white font-display mt-0.5" id="zona-precio-medio">1.540 €/m²</p>
+            <span class="text-[11px] text-slate-400">Basado en muestra de 184 testigos activos</span>
+          </div>
+
+          <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800">
+            <p class="text-xs text-slate-400">Tiempo Medio de Venta Estimado:</p>
+            <p class="text-2xl font-extrabold text-brand-blue font-display mt-0.5" id="zona-tiempo">58 días</p>
+            <span class="text-[11px] text-brand-emerald font-semibold">Alta demanda en 3 dormitorios</span>
+          </div>
+        </div>
+
+        <!-- Comparativa de Inmuebles en Cartera de Izon -->
+        <h4 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 flex items-center gap-2">
+          <span>Inmuebles en Cartera de Izon Consulting vs Media de Mercado:</span>
+        </h4>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="propiedades-comparador">
+          
+          <!-- Inmueble 1 -->
+          <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-emerald transition-all group">
+            <div class="relative h-44 overflow-hidden">
+              <img src="https://www.izonconsulting.es/wp-content/uploads/2025/10/15-1-818x540.jpg" alt="Piso Izon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-2.5 right-2.5 bg-brand-emerald text-slate-950 font-extrabold text-[11px] px-2.5 py-1 rounded-full shadow">
+                🔥 -9% vs Idealista
+              </div>
+            </div>
+            <div class="p-4 space-y-2">
+              <h5 class="text-white font-bold text-sm">Piso Luminoso con Balcón</h5>
+              <p class="text-xs text-slate-400">Calle Rosario • 110 m² • 3 hab • 2 baños</p>
+              <div class="flex items-baseline justify-between pt-2 border-t border-slate-800">
+                <div>
+                  <span class="text-base font-extrabold text-white">155.000 €</span>
+                  <span class="text-[11px] text-slate-400 block">1.409 €/m²</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-xs text-slate-400 line-through">170.000 €</span>
+                  <span class="text-[10px] text-brand-emerald font-bold block">Oportunidad Activa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inmueble 2 -->
+          <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-blue transition-all group">
+            <div class="relative h-44 overflow-hidden">
+              <img src="https://www.izonconsulting.es/wp-content/uploads/2025/11/7-1-818x540.jpg" alt="Piso Izon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-2.5 right-2.5 bg-brand-blue text-white font-bold text-[11px] px-2.5 py-1 rounded-full shadow">
+                En Precio de Mercado
+              </div>
+            </div>
+            <div class="p-4 space-y-2">
+              <h5 class="text-white font-bold text-sm">Ático Dúplex Reformado</h5>
+              <p class="text-xs text-slate-400">Zona Circunvalación • 135 m² • 4 hab</p>
+              <div class="flex items-baseline justify-between pt-2 border-t border-slate-800">
+                <div>
+                  <span class="text-base font-extrabold text-white">208.000 €</span>
+                  <span class="text-[11px] text-slate-400 block">1.540 €/m²</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-[10px] text-slate-400">Precio Justo</span>
+                  <span class="text-[10px] text-brand-blue font-bold block">Terraza 25 m²</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Inmueble 3 -->
+          <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-amber transition-all group">
+            <div class="relative h-44 overflow-hidden">
+              <img src="https://www.izonconsulting.es/wp-content/uploads/2025/11/4-1-818x540.jpg" alt="Piso Izon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+              <div class="absolute top-2.5 right-2.5 bg-brand-amber text-slate-950 font-bold text-[11px] px-2.5 py-1 rounded-full shadow">
+                Alta Rentabilidad (7.8%)
+              </div>
+            </div>
+            <div class="p-4 space-y-2">
+              <h5 class="text-white font-bold text-sm">Ideal Inversión para Alquiler</h5>
+              <p class="text-xs text-slate-400">Cercano a circunvalación • 80 m² • 2 hab</p>
+              <div class="flex items-baseline justify-between pt-2 border-t border-slate-800">
+                <div>
+                  <span class="text-base font-extrabold text-white">105.000 €</span>
+                  <span class="text-[11px] text-slate-400 block">1.312 €/m²</span>
+                </div>
+                <div class="text-right">
+                  <span class="text-[10px] text-slate-400">Alquiler estimado</span>
+                  <span class="text-[10px] text-brand-amber font-bold block">680 €/mes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 4: FASE 2 - CRM PROPIO OMNICANAL ================= -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="text-xs uppercase font-bold tracking-widest text-brand-purple bg-brand-purple/10 px-3 py-1 rounded-full border border-brand-purple/20">Fase 2: Escalabilidad Total</span>
+      <h2 class="text-2xl sm:text-4xl font-bold font-display text-white mt-3">
+        CRM Propio Inmobiliario: Una Sola Bandeja Unificada
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-2">
+        Imagina tener todas las conversaciones de <strong>WhatsApp</strong>, mensajes de <strong>Instagram</strong>, correos de portales y <strong>llamadas telefónicas</strong> en una misma pantalla para todo el equipo de Izon Consulting.
+      </p>
+    </div>
+
+    <!-- Mockup Interactivo del CRM -->
+    <div class="bg-brand-card rounded-3xl border border-slate-800 shadow-2xl overflow-hidden">
+      
+      <!-- Barra Superior del CRM -->
+      <div class="bg-slate-900 px-6 py-3.5 border-b border-slate-800 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-3">
+          <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span class="text-xs font-semibold text-slate-400 ml-2 border-l border-slate-700 pl-3">
+            Izon Omnichannel CRM • Panel de Gestión
+          </span>
+        </div>
+
+        <!-- Pestañas de Canales -->
+        <div class="flex items-center gap-1.5 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs">
+          <button onclick="cambiarCanalCrm('todos')" id="crm-tab-todos" class="crm-pill active px-3 py-1 rounded-lg font-semibold bg-brand-blue text-white transition-all">
+            Todos (14)
+          </button>
+          <button onclick="cambiarCanalCrm('whatsapp')" id="crm-tab-whatsapp" class="crm-pill px-3 py-1 rounded-lg font-medium text-slate-400 hover:text-white transition-all">
+            WhatsApp (8)
+          </button>
+          <button onclick="cambiarCanalCrm('llamadas')" id="crm-tab-llamadas" class="crm-pill px-3 py-1 rounded-lg font-medium text-slate-400 hover:text-white transition-all">
+            Llamadas (3)
+          </button>
+          <button onclick="cambiarCanalCrm('instagram')" id="crm-tab-instagram" class="crm-pill px-3 py-1 rounded-lg font-medium text-slate-400 hover:text-white transition-all">
+            Instagram (2)
+          </button>
+          <button onclick="cambiarCanalCrm('email')" id="crm-tab-email" class="crm-pill px-3 py-1 rounded-lg font-medium text-slate-400 hover:text-white transition-all">
+            Email / Portales (1)
+          </button>
+        </div>
+      </div>
+
+      <!-- Cuerpo del CRM (Lista de Leads + Ficha de Inmueble con Planos) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
+        
+        <!-- Lista de Conversaciones Recientes -->
+        <div class="lg:col-span-5 p-4 space-y-2.5 max-h-[460px] overflow-y-auto">
+          
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-brand-blue/40 flex items-start justify-between cursor-pointer hover:bg-slate-800 transition-colors">
+            <div class="flex items-start gap-3">
+              <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-xs">WA</span>
+              <div>
+                <h5 class="text-xs font-bold text-white flex items-center gap-1.5">
+                  Carlos Gómez
+                  <span class="text-[10px] bg-brand-emerald/10 text-brand-emerald px-1.5 py-0.2 rounded font-semibold">Cita Cerrada</span>
+                </h5>
+                <p class="text-[11px] text-slate-300 mt-0.5 line-clamp-1">"Perfecto, nos vemos el jueves a las 17:30 en el piso de C/ Rosario."</p>
+                <span class="text-[10px] text-slate-400 block mt-1">Interés: 3 hab Ensanche • Asignado a: Lucía</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-slate-400">Hace 4 min</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800/80 flex items-start justify-between cursor-pointer hover:bg-slate-800 transition-colors">
+            <div class="flex items-start gap-3">
+              <span class="w-8 h-8 rounded-full bg-brand-blue/20 text-brand-blue flex items-center justify-center font-bold text-xs">TEL</span>
+              <div>
+                <h5 class="text-xs font-bold text-white flex items-center gap-1.5">
+                  Llamada Grabada (ElevenLabs)
+                  <span class="text-[10px] bg-brand-blue/10 text-brand-blue px-1.5 py-0.2 rounded font-semibold">Propietario</span>
+                </h5>
+                <p class="text-[11px] text-slate-300 mt-0.5 line-clamp-1">"Quiere vender piso en Altozano (120 m²). Valoración enviada."</p>
+                <span class="text-[10px] text-slate-400 block mt-1">Presupuesto estimado: 180.000 € • Asignado a: Antonio</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-slate-400">Hace 22 min</span>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-slate-900/50 border border-slate-800/80 flex items-start justify-between cursor-pointer hover:bg-slate-800 transition-colors">
+            <div class="flex items-start gap-3">
+              <span class="w-8 h-8 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center font-bold text-xs">IG</span>
+              <div>
+                <h5 class="text-xs font-bold text-white flex items-center gap-1.5">
+                  @mariamartinez_ab
+                  <span class="text-[10px] bg-slate-800 text-slate-300 px-1.5 py-0.2 rounded font-semibold">Nuevo Lead</span>
+                </h5>
+                <p class="text-[11px] text-slate-300 mt-0.5 line-clamp-1">"Hola, ¿el ático de la terraza sigue disponible para alquilar?"</p>
+                <span class="text-[10px] text-slate-400 block mt-1">Vía: Reel Instagram Izon</span>
+              </div>
+            </div>
+            <span class="text-[10px] text-slate-400">Hace 1 hora</span>
+          </div>
+
+        </div>
+
+        <!-- Ficha de Inmueble y Documentación (Fichas Técnicas & Planos) -->
+        <div class="lg:col-span-7 p-6 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-[11px] font-bold text-brand-blue uppercase tracking-wider">Ficha Técnica & Expediente Digital</span>
+              <h4 class="text-base font-bold text-white">Vivienda C/ Rosario, 42 (Ensanche, Albacete)</h4>
+            </div>
+            <span class="px-2.5 py-1 rounded bg-brand-emerald/10 text-brand-emerald text-xs font-bold border border-brand-emerald/20">
+              Cartera Exclusiva
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+            <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Superficie</span>
+              <strong class="text-white text-xs">110 m² construidos</strong>
+            </div>
+            <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Distribución</span>
+              <strong class="text-white text-xs">3 hab • 2 baños</strong>
+            </div>
+            <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Cert. Energético</span>
+              <strong class="text-brand-emerald text-xs">Calificación C</strong>
+            </div>
+            <div class="bg-slate-900 p-2.5 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px]">Comparativa</span>
+              <strong class="text-brand-blue text-xs">-9% vs Idealista</strong>
+            </div>
+          </div>
+
+          <!-- Documentación Vinculada al Lead -->
+          <div class="bg-slate-900/90 p-4 rounded-2xl border border-slate-800">
+            <p class="text-xs font-semibold text-slate-300 mb-2.5 flex items-center gap-2">
+              <svg class="w-4 h-4 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              Documentación enviada automáticamente al cliente por WhatsApp:
+            </p>
+            <div class="flex flex-wrap gap-2 text-[11px]">
+              <span class="px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 flex items-center gap-1.5">
+                📄 Plano_Arquitectura_C_Rosario.pdf
+              </span>
+              <span class="px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 flex items-center gap-1.5">
+                ⚡ Certificado_Eficiencia_Izon.pdf
+              </span>
+              <span class="px-2.5 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-200 flex items-center gap-1.5">
+                📊 Informe_Mercado_Idealista_Albacete.pdf
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 5: CALCULADORA DE RETORNO (ROI) ================= -->
+  <section class="py-16 bg-slate-950/60 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs uppercase font-bold tracking-widest text-brand-emerald bg-brand-emerald/10 px-3 py-1 rounded-full border border-brand-emerald/20">Impacto Económico</span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-display text-white mt-3">
+          ¿Cuánto Dinero Extra Puede Aportar a Izon Consulting?
+        </h2>
+        <p class="text-slate-400 text-sm mt-2">
+          Mueve el control deslizante para calcular las ventas extra recuperando las llamadas y mensajes no atendidos a tiempo.
+        </p>
+      </div>
+
+      <div class="bg-brand-card rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-glass">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          
+          <div class="md:col-span-7 space-y-6">
+            <div>
+              <div class="flex justify-between text-sm mb-2">
+                <span class="text-slate-300 font-medium">Contactos/Llamadas recibidas al mes:</span>
+                <span class="text-brand-blue font-bold text-base" id="roi-leads-val">150 consultas</span>
+              </div>
+              <input type="range" min="50" max="400" value="150" step="10" id="roi-slider" class="w-full accent-brand-blue cursor-pointer h-2 bg-slate-800 rounded-lg" oninput="recalcularRoi()">
+              <div class="flex justify-between text-[11px] text-slate-500 mt-1">
+                <span>50 consultas</span>
+                <span>200 consultas</span>
+                <span>400 consultas</span>
+              </div>
+            </div>
+
+            <div class="space-y-2 text-xs text-slate-300">
+              <div class="flex justify-between py-1.5 border-b border-slate-800">
+                <span>Contactos fuera de horario (noches/findes ~35%):</span>
+                <strong class="text-white" id="roi-perdidos">52 clientes</strong>
+              </div>
+              <div class="flex justify-between py-1.5 border-b border-slate-800">
+                <span>Citas extras agendadas por la IA:</span>
+                <strong class="text-brand-emerald font-bold" id="roi-citas">+18 visitas</strong>
+              </div>
+              <div class="flex justify-between py-1.5">
+                <span>Ventas/Captaciones extras cerradas:</span>
+                <strong class="text-brand-blue font-bold" id="roi-ventas">1 a 2 operaciones/mes</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-5 bg-gradient-to-br from-slate-900 to-slate-950 p-6 rounded-2xl border border-brand-emerald/30 text-center">
+            <span class="text-xs uppercase tracking-wider text-slate-400 font-semibold">Beneficio Neto Extra Estimado:</span>
+            <div class="text-3xl sm:text-4xl font-extrabold text-brand-emerald font-display my-2" id="roi-total">
+              +4.800 € / mes
+            </div>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Calculado sobre una comisión media estándar de 4.000 € por compraventa en Albacete.
+            </p>
+            <div class="text-[11px] bg-brand-emerald/10 text-brand-emerald py-2 px-3 rounded-lg border border-brand-emerald/20 font-semibold">
+              El sistema se paga solo en los primeros 10 días de uso.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 6: ROADMAP DE IMPLEMENTACIÓN ================= -->
+  <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-2xl sm:text-4xl font-bold font-display text-white">
+        Plan de Implantación Rápida
+      </h2>
+      <p class="text-slate-400 text-sm sm:text-base mt-2">
+        Diseñado para funcionar sin interrumpir el trabajo diario de vuestro equipo comercial.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      
+      <!-- Fase 1 -->
+      <div class="bg-brand-card p-6 sm:p-8 rounded-3xl border border-brand-blue/30 relative">
+        <div class="absolute -top-3.5 left-6 bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          Fase 1 • Lanzamiento Inmediato (Semana 1-2)
+        </div>
+        <h3 class="text-lg font-bold text-white mt-2 mb-3">Atención & Captación 24/7</h3>
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-blue font-bold">✓</span>
+            <span>Instalación del <strong>Chatbot de WhatsApp</strong> con catálogo de inmuebles de Izon.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-blue font-bold">✓</span>
+            <span>Activación del <strong>Contestador de Voz ElevenLabs</strong> para el teléfono 967 66 00 05.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-blue font-bold">✓</span>
+            <span>Conexión en directo con <strong>Idealista API</strong> para tasaciones y comparativas instantáneas.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-blue font-bold">✓</span>
+            <span>Agendamiento automático en Google Calendar con avisos a los asesores.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Fase 2 -->
+      <div class="bg-brand-card p-6 sm:p-8 rounded-3xl border border-slate-800 relative">
+        <div class="absolute -top-3.5 left-6 bg-brand-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+          Fase 2 • Escalabilidad & CRM (Mes 2)
+        </div>
+        <h3 class="text-lg font-bold text-white mt-2 mb-3">CRM Propio Omnicanal</h3>
+        <ul class="space-y-3 text-xs sm:text-sm text-slate-300">
+          <li class="flex items-start gap-2">
+            <span class="text-brand-purple font-bold">✓</span>
+            <span><strong>Bandeja Única:</strong> WhatsApp, Instagram DMs, llamadas y correos en un solo sitio.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-purple font-bold">✓</span>
+            <span>Fichas técnicas avanzadas con descarga de planos y certificados energéticos.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-purple font-bold">✓</span>
+            <span>Automatizaciones de seguimiento (recordatorio 24h antes de la visita por WhatsApp).</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-brand-purple font-bold">✓</span>
+            <span>Panel de métricas de rendimiento por comercial (Lucía, Antonio, etc.).</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= SECCIÓN 7: LLAMADA A LA ACCIÓN (CIERRE) ================= -->
+  <section id="contacto-demo" class="py-16 bg-gradient-to-b from-slate-900 to-brand-dark border-t border-slate-800 text-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-gradient-to-r from-brand-blue/20 via-brand-emerald/10 to-brand-blue/20 p-8 sm:p-12 rounded-3xl border border-brand-blue/40 shadow-glow-blue">
+        <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white mb-4">
+          ¿Activamos el Piloto para Izon Consulting?
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+          Podemos tener la Fase 1 funcionando en menos de 5 días con vuestro propio número de WhatsApp y vuestra cartera real de Albacete.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a id="btn-share-whatsapp" href="https://wa.me/?text=Hola%2C%20mira%20esta%20propuesta%20interactiva%20con%20chatbot%20de%20WhatsApp%2C%20contestador%20de%20voz%20ElevenLabs%20y%20comparador%20de%20Idealista%20para%20Izon%20Consulting%3A%20" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-emerald hover:bg-emerald-600 text-slate-950 font-extrabold text-sm shadow-glow-emerald transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Compartir Propuesta por WhatsApp</span>
+          </a>
+
+          <button onclick="copiarEnlacePropuesta()" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm border border-slate-700 transition-all flex items-center justify-center gap-2">
+            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path></svg>
+            <span id="btn-copiar-text">Copiar Enlace Interactivo</span>
+          </button>
+        </div>
+
+        <p class="text-xs text-slate-400 mt-6">
+          Preparado para: <strong>Dirección de Izon Consulting</strong> • Albacete • Octubre 2026
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <img src="https://www.izonconsulting.es/wp-content/uploads/2019/03/logo-izon-consulting.png" alt="Izon" class="h-5 object-contain bg-white/90 p-0.5 rounded">
+        <span>© 2026 Propuesta de Automatización para Izon Consulting</span>
+      </div>
+      <p class="text-[11px] text-slate-400">Desarrollado con arquitectura WAT • Conexión Idealista 17 & ElevenLabs Voice</p>
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT INTERACTIVO ================= -->
+  <script>
+    // --- LÓGICA DEL CHATBOT DE WHATSAPP ---
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.getElementById('chat-input');
+    const typingIndicator = document.getElementById('typing-indicator');
+
+    const respuestasPredefinidas = {
+      pisos_ensanche: {
+        pregunta: "Busco piso 3 hab en el Ensanche de Albacete",
+        respuesta: `¡Gran zona! En el Ensanche tenemos actualmente 3 opciones destacadas en cartera:
+
+🏢 **Piso C/ Rosario (Ensanche)**
+• 110 m² | 3 habitaciones | 2 baños | Balcón
+• Precio: **155.000 €** (1.409 €/m²)
+• 🔥 *Oportunidad: Está un **9% por debajo** de la media de Idealista en el Ensanche (1.540 €/m²).*
+
+¿Te gustaría que te envíe el plano y agendemos una visita para verlo esta semana?`
+      },
+      agendar_visita: {
+        pregunta: "Quiero agendar una visita este jueves con Lucía",
+        respuesta: `¡Perfecto! Te consulto la agenda en tiempo real de nuestra asesora **Lucía**:
+
+📅 **Huecos disponibles para este Jueves:**
+1️⃣ 11:30h - 12:15h
+2️⃣ 17:00h - 17:45h
+3️⃣ 18:30h - 19:15h
+
+Por favor, indícame cuál de estos horarios te viene mejor y tu número de teléfono para dejar la cita bloqueada en el calendario. ✨`
+      },
+      valorar_piso: {
+        pregunta: "Tengo un piso en Zona Altozano y quiero valorarlo",
+        respuesta: `Con mucho gusto. Consultando en vivo los datos de mercado de **Idealista en Zona Altozano / Centro (Albacete)**:
+
+📊 **Estudio de Mercado en Tiempo Real:**
+• Precio medio registrado: **1.820 €/m²**
+• Rango habitual: 1.700 €/m² a 1.950 €/m²
+• Si tu piso tiene unos 100 m², el valor de mercado estimado se sitúa entre **175.000 € y 190.000 €**.
+
+¿Cuántos metros cuadrados tiene tu vivienda aproximadamente y si cuenta con ascensor/garaje? Te preparo la valoración detallada sin compromiso.`
+      },
+      planos_ficha: {
+        pregunta: "¿Tenéis la ficha técnica y el plano de distribución?",
+        respuesta: `¡Por supuesto! Aquí tienes el enlace directo para consultar la documentación oficial:
+
+📄 [Descargar Ficha_Tecnica_C_Rosario.pdf]
+📐 [Ver Plano_Arquitectura_Escala.pdf]
+⚡ Certificado Energético: **Calificación C** (Consumo: 112 kWh/m² año)
+
+¿Quieres resolver alguna duda sobre los gastos de comunidad o la ITE del edificio?`
+      }
+    };
+
+    function enviarMensajeSimulado(clave) {
+      const item = respuestasPredefinidas[clave];
+      if (!item) return;
+
+      // 1. Mostrar mensaje del usuario
+      agregarMensajeUsuario(item.pregunta);
+
+      // 2. Activar indicador escribiendo
+      typingIndicator.classList.remove('hidden');
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // 3. Responder tras breve pausa
+      setTimeout(() => {
+        typingIndicator.classList.add('hidden');
+        agregarMensajeBot(item.respuesta);
+      }, 900);
+    }
+
+    function enviarMensajeUsuario() {
+      const texto = chatInput.value.trim();
+      if (!texto) return;
+
+      agregarMensajeUsuario(texto);
+      chatInput.value = '';
+
+      typingIndicator.classList.remove('hidden');
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      setTimeout(() => {
+        typingIndicator.classList.add('hidden');
+        let respuestaBot = "Gracias por tu consulta. En Izon Consulting gestionamos más de 120 inmuebles en Albacete. Un asesor especialista te contactará o puedo darte detalles si me indicas la zona que buscas o si deseas vender.";
+        
+        const lower = texto.toLowerCase();
+        if (lower.includes("precio") || lower.includes("idealista") || lower.includes("cuanto vale")) {
+          respuestaBot = "Consultando el radar de Idealista para Albacete: el precio medio actual se sitúa en 1.540 €/m² en Ensanche y 1.820 €/m² en Centro. ¿Qué zona concreta te interesa evaluar?";
+        } else if (lower.includes("visita") || lower.includes("cita") || lower.includes("ver")) {
+          respuestaBot = "¡Estupendo! Tenemos visitas disponibles de lunes a viernes (mañana y tarde) y sábados por la mañana. ¿Qué día prefieres?";
+        } else if (lower.includes("vender") || lower.includes("propietario")) {
+          respuestaBot = "Genial. Ofrecemos valoración gratuita con datos de Idealista, reportaje fotográfico profesional y tour virtual. ¿Dónde se ubica la propiedad?";
+        }
+
+        agregarMensajeBot(respuestaBot);
+      }, 1000);
+    }
+
+    function agregarMensajeUsuario(texto) {
+      const ahora = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const html = `
+        <div class="chat-bubble-out p-3 text-xs max-w-[85%] ml-auto text-slate-100 shadow">
+          <p>${escapeHtml(texto)}</p>
+          <span class="text-[9px] text-emerald-200 block text-right mt-1">${ahora} ✓✓</span>
+        </div>
+      `;
+      chatMessages.insertAdjacentHTML('beforeend', html);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function agregarMensajeBot(texto) {
+      const ahora = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const formateado = texto.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      const html = `
+        <div class="chat-bubble-in p-3 text-xs max-w-[85%] text-slate-200 shadow">
+          <p class="font-semibold text-brand-blue mb-1">Izon Consulting:</p>
+          <p>${formateado}</p>
+          <span class="text-[9px] text-slate-400 block text-right mt-1">${ahora}</span>
+        </div>
+      `;
+      chatMessages.insertAdjacentHTML('beforeend', html);
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    // --- REPRODUCTOR DE VOZ ELEVENLABS (AUDIO SIMULATOR) ---
+    let audioPlaying = false;
+    let audioTimer = null;
+    let audioSeconds = 0;
+
+    function toggleAudioDemo() {
+      const iconPlay = document.getElementById('icon-play');
+      const iconPause = document.getElementById('icon-pause');
+      const timeSpan = document.getElementById('audio-time');
+      const transcription = document.getElementById('transcription-text');
+      const bars = document.querySelectorAll('.audio-bar');
+
+      if (!audioPlaying) {
+        audioPlaying = true;
+        iconPlay.classList.add('hidden');
+        iconPause.classList.remove('hidden');
+        audioSeconds = 0;
+
+        transcription.innerHTML = `<strong>Sofía (ElevenLabs):</strong> "Hola, gracias por llamar a Izon Consulting en Albacete. En este momento nuestros agentes están fuera de la oficina, pero puedo ayudarte a agendar una visita o consultar cualquier piso de nuestra cartera. ¿Sobre qué propiedad deseas información?"`;
+
+        // Intentar reproducir con la API de síntesis de voz nativa del navegador si está disponible
+        if ('speechSynthesis' in window) {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance("Hola, gracias por llamar a Izon Consulting en Albacete. En este momento nuestros agentes están fuera de la oficina, pero puedo ayudarte a agendar una visita o consultar cualquier piso de nuestra cartera.");
+          utterance.lang = 'es-ES';
+          utterance.rate = 1.0;
+          utterance.pitch = 1.05;
+          window.speechSynthesis.speak(utterance);
+        }
+
+        // Animación de barras
+        audioTimer = setInterval(() => {
+          audioSeconds++;
+          const segStr = audioSeconds < 10 ? '0' + audioSeconds : audioSeconds;
+          timeSpan.textContent = `0:${segStr} / 0:18`;
+
+          bars.forEach(b => {
+            const h = Math.floor(Math.random() * 26) + 4;
+            b.style.height = h + 'px';
+          });
+
+          if (audioSeconds >= 18) {
+            stopAudioDemo();
+          }
+        }, 1000);
+
+      } else {
+        stopAudioDemo();
+      }
+    }
+
+    function stopAudioDemo() {
+      audioPlaying = false;
+      clearInterval(audioTimer);
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+      document.getElementById('icon-play').classList.remove('hidden');
+      document.getElementById('icon-pause').classList.add('hidden');
+      document.getElementById('audio-time').textContent = '0:00 / 0:18';
+      document.querySelectorAll('.audio-bar').forEach(b => b.style.height = '6px');
+    }
+
+    // --- ZONAS DE ALBACETE (IDEALISTA COMPARATOR) ---
+    const datosZonas = {
+      ensanche: {
+        nombre: "Ensanche - Circunvalación (Albacete)",
+        precioMedio: "1.540 €/m²",
+        tiempo: "58 días",
+        props: [
+          { titulo: "Piso Luminoso con Balcón", ref: "Calle Rosario • 110 m² • 3 hab", p: "155.000 €", pm2: "1.409 €/m²", tag: "🔥 -9% vs Idealista", tagColor: "bg-brand-emerald text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/10/15-1-818x540.jpg" },
+          { titulo: "Ático Dúplex Reformado", ref: "Zona Circunvalación • 135 m² • 4 hab", p: "208.000 €", pm2: "1.540 €/m²", tag: "En Precio de Mercado", tagColor: "bg-brand-blue text-white", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/7-1-818x540.jpg" },
+          { titulo: "Ideal Inversión para Alquiler", ref: "Cercano circunvalación • 80 m² • 2 hab", p: "105.000 €", pm2: "1.312 €/m²", tag: "Alta Rentabilidad (7.8%)", tagColor: "bg-brand-amber text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/4-1-818x540.jpg" }
+        ]
+      },
+      centro: {
+        nombre: "Centro Histórico - Plaza del Altozano (Albacete)",
+        precioMedio: "1.820 €/m²",
+        tiempo: "45 días",
+        props: [
+          { titulo: "Exclusivo Piso Señorial", ref: "Calle Marqués de Villores • 150 m² • 4 hab", p: "260.000 €", pm2: "1.733 €/m²", tag: "🔥 -5% vs Idealista", tagColor: "bg-brand-emerald text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/3-1-818x540.jpg" },
+          { titulo: "Piso Moderno Plaza Altozano", ref: "Plaza del Altozano • 105 m² • 3 hab", p: "192.000 €", pm2: "1.828 €/m²", tag: "Ubicación Prime", tagColor: "bg-brand-blue text-white", img: "https://www.izonconsulting.es/wp-content/uploads/2025/10/15-1-818x540.jpg" },
+          { titulo: "Oficina / Vivienda Transformable", ref: "Calle Ancha • 95 m² • 2 hab", p: "165.000 €", pm2: "1.736 €/m²", tag: "Gran Oportunidad", tagColor: "bg-brand-amber text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/7-1-818x540.jpg" }
+        ]
+      },
+      parque_sur: {
+        nombre: "Parque Sur - Campus Universidad (Albacete)",
+        precioMedio: "1.680 €/m²",
+        tiempo: "49 días",
+        props: [
+          { titulo: "Vivienda Frente al Parque", ref: "Parque Abelardo Sánchez • 125 m² • 3 hab", p: "205.000 €", pm2: "1.640 €/m²", tag: "🔥 -3% vs Idealista", tagColor: "bg-brand-emerald text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/4-1-818x540.jpg" },
+          { titulo: "Apartamento para Estudiantes", ref: "Avenida España • 70 m² • 2 hab", p: "118.000 €", pm2: "1.685 €/m²", tag: "Alquiler Asegurado", tagColor: "bg-brand-blue text-white", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/3-1-818x540.jpg" },
+          { titulo: "Piso con Garaje y Trastero", ref: "Zona Campus • 95 m² • 3 hab", p: "159.000 €", pm2: "1.673 €/m²", tag: "Garaje Incluido", tagColor: "bg-brand-amber text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/10/15-1-818x540.jpg" }
+        ]
+      },
+      villacerrada: {
+        nombre: "Villacerrada - Zona Feria (Albacete)",
+        precioMedio: "1.490 €/m²",
+        tiempo: "62 días",
+        props: [
+          { titulo: "Piso Céntrico Villacerrada", ref: "C/ Baños • 100 m² • 3 hab", p: "142.000 €", pm2: "1.420 €/m²", tag: "🔥 -5% vs Idealista", tagColor: "bg-brand-emerald text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/7-1-818x540.jpg" },
+          { titulo: "Piso Amplio Zona Feria", ref: "Calle Feria • 115 m² • 4 hab", p: "172.000 €", pm2: "1.495 €/m²", tag: "Feria de Albacete", tagColor: "bg-brand-blue text-white", img: "https://www.izonconsulting.es/wp-content/uploads/2025/10/15-1-818x540.jpg" },
+          { titulo: "Oportunidad con Ascensor", ref: "Calle Caba • 85 m² • 3 hab", p: "123.000 €", pm2: "1.447 €/m²", tag: "Listo para Entrar", tagColor: "bg-brand-amber text-slate-950", img: "https://www.izonconsulting.es/wp-content/uploads/2025/11/3-1-818x540.jpg" }
+        ]
+      }
+    };
+
+    function seleccionarZona(zonaKey) {
+      document.querySelectorAll('.zona-tab').forEach(b => {
+        b.classList.remove('bg-brand-blue', 'text-white', 'shadow-glow-blue');
+        b.classList.add('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+      });
+      const activeTab = document.getElementById('tab-' + zonaKey);
+      activeTab.classList.remove('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+      activeTab.classList.add('bg-brand-blue', 'text-white', 'shadow-glow-blue');
+
+      const data = datosZonas[zonaKey];
+      document.getElementById('zona-nombre').textContent = data.nombre;
+      document.getElementById('zona-precio-medio').textContent = data.precioMedio;
+      document.getElementById('zona-tiempo').textContent = data.tiempo;
+
+      const container = document.getElementById('propiedades-comparador');
+      container.innerHTML = data.props.map(p => `
+        <div class="bg-slate-900 rounded-2xl overflow-hidden border border-slate-800 hover:border-brand-blue transition-all group">
+          <div class="relative h-44 overflow-hidden">
+            <img src="${p.img}" alt="${p.titulo}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            <div class="absolute top-2.5 right-2.5 ${p.tagColor} font-bold text-[11px] px-2.5 py-1 rounded-full shadow">
+              ${p.tag}
+            </div>
+          </div>
+          <div class="p-4 space-y-2">
+            <h5 class="text-white font-bold text-sm">${p.titulo}</h5>
+            <p class="text-xs text-slate-400">${p.ref}</p>
+            <div class="flex items-baseline justify-between pt-2 border-t border-slate-800">
+              <div>
+                <span class="text-base font-extrabold text-white">${p.p}</span>
+                <span class="text-[11px] text-slate-400 block">${p.pm2}</span>
+              </div>
+              <div class="text-right">
+                <span class="text-[10px] text-brand-emerald font-bold block">Testado en Idealista</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // --- CRM OMNICANAL TABS ---
+    function cambiarCanalCrm(canal) {
+      document.querySelectorAll('.crm-pill').forEach(b => {
+        b.classList.remove('bg-brand-blue', 'text-white');
+        b.classList.add('text-slate-400');
+      });
+      const btn = document.getElementById('crm-tab-' + canal);
+      if (btn) {
+        btn.classList.add('bg-brand-blue', 'text-white');
+        btn.classList.remove('text-slate-400');
+      }
+    }
+
+    // --- CALCULADORA DE RETORNO (ROI) ---
+    function recalcularRoi() {
+      const slider = document.getElementById('roi-slider');
+      const leads = parseInt(slider.value);
+
+      document.getElementById('roi-leads-val').textContent = leads + " consultas";
+
+      const perdidos = Math.round(leads * 0.35);
+      const citas = Math.round(perdidos * 0.35);
+      const ventas = (citas * 0.08).toFixed(1);
+      const beneficio = Math.round(ventas * 4000);
+
+      document.getElementById('roi-perdidos').textContent = perdidos + " clientes";
+      document.getElementById('roi-citas').textContent = "+" + citas + " visitas agendadas";
+      document.getElementById('roi-ventas').textContent = ventas + " operaciones extras";
+      document.getElementById('roi-total').textContent = "+" + beneficio.toLocaleString('es-ES') + " € / mes";
+    }
+
+    // --- COPIAR ENLACE DE PROPUESTA ---
+    function copiarEnlacePropuesta() {
+      const url = window.location.href;
+      navigator.clipboard.writeText(url).then(() => {
+        const btnText = document.getElementById('btn-copiar-text');
+        btnText.textContent = "¡Enlace Copiado al Portapapeles!";
+        setTimeout(() => {
+          btnText.textContent = "Copiar Enlace Interactivo";
+        }, 2500);
+      });
+    }
+
+    // Actualizar botón de WhatsApp con la URL actual
+    window.addEventListener('DOMContentLoaded', () => {
+      const shareBtn = document.getElementById('btn-share-whatsapp');
+      if (shareBtn) {
+        const urlActual = encodeURIComponent(window.location.href);
+        const mensaje = encodeURIComponent("¡Hola equipo de Izon Consulting! Os comparto esta propuesta interactiva que hemos preparado para vosotros con Chatbot WhatsApp 24/7, Contestador de Voz ElevenLabs y Radar de Idealista: ");
+        shareBtn.href = `https://wa.me/?text=${mensaje}${urlActual}`;
+      }
+    });
+  </script>
+
+</body>
+</html>
