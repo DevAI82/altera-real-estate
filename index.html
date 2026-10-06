@@ -465,33 +465,125 @@
       <div class="text-center max-w-3xl mx-auto mb-10">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue/15 text-brand-blueAccent border border-brand-blue/30 text-xs font-bold uppercase tracking-wider mb-3">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-          Módulo de Inteligencia de Mercado
+          Inteligencia de Mercado & Cierre Comercial
         </div>
         <h2 class="text-2xl sm:text-4xl font-extrabold font-display text-white">
-          Cartera Izon Consulting × Radar de Mercado Idealista
+          Radar €/m²: Cartera Izon vs Big Data de Idealista
         </h2>
         <p class="text-slate-300 text-sm sm:text-base mt-2">
-          Compara los pisos reales de la web de Izon contra el valor medio del m² en Idealista, visualiza la comparativa gráfica y realiza búsquedas en vivo para no perder ninguna oportunidad de negocio.
+          Compara el valor de mercado por metro cuadrado en los principales barrios de <strong>Albacete Capital</strong>. Tasación automática y argumentario de cierre con <strong class="text-brand-emerald">filtro inteligente anti-fuga de clientes</strong>.
         </p>
       </div>
 
+      <!-- BANNER ESTRATÉGICO: FILTRO ANTI-FUGA DE CLIENTES (RESOLUCIÓN AL DILEMA COMERCIAL) -->
+      <div class="glass-card rounded-3xl p-5 sm:p-7 border border-brand-emerald/30 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/30 shadow-2xl mb-10">
+        <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5">
+          <div class="space-y-1.5 flex-1">
+            <div class="inline-flex items-center gap-2 text-brand-emerald font-bold text-xs uppercase tracking-wider">
+              <span class="w-2.5 h-2.5 rounded-full bg-brand-emerald animate-ping"></span>
+              🛡️ Algoritmo Comercial Anti-Fuga de Leads
+            </div>
+            <h3 class="text-base sm:text-xl font-bold text-white">
+              ¿Por qué el cliente nunca ve enlaces a los pisos de la competencia?
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Si mostramos pisos de la competencia en Idealista, el comprador se fugaría. Por eso, el sistema opera con dos reglas estrictas:
+              <br class="hidden sm:inline">
+              <strong>1. Cara al Comprador (WhatsApp):</strong> SOLO se menciona el precio de Idealista si el piso de Izon es <strong class="text-brand-emerald">más barato (€/m² inferior)</strong>, convirtiéndolo en un <em>gatillo irrefutable de ahorro y urgencia</em>. Si está en o sobre mercado, se oculta la comparativa y se destacan calidades.
+              <br class="hidden sm:inline">
+              <strong>2. Cara al Asesor (Uso Interno):</strong> Los comerciales de Izon (Lucía y Antonio) usan el radar completo para tasar y captar exclusivas con datos objetivos.
+            </p>
+          </div>
+
+          <!-- Selector Interactivo de Perspectiva -->
+          <div class="bg-slate-950 p-2 rounded-2xl border border-slate-800 flex flex-col sm:flex-row gap-2 flex-shrink-0">
+            <button onclick="cambiarModoAntiFuga('comprador')" id="btn-modo-comprador" class="px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-brand-emerald text-slate-950 shadow-glow-emerald flex items-center justify-center gap-2">
+              <span>📱 Vista Comprador (Protegida)</span>
+            </button>
+            <button onclick="cambiarModoAntiFuga('asesor')" id="btn-modo-asesor" class="px-4 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 flex items-center justify-center gap-2">
+              <span>💼 Vista Asesor (Tasador)</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Pestañas Principales del Módulo -->
-      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10">
-        <button onclick="cambiarPestanaModulo('cartera')" id="btn-tab-cartera" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-blue text-white shadow-glow-blue flex items-center gap-2">
+      <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+        <button onclick="cambiarPestanaModulo('grafica')" id="btn-tab-grafica" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-brand-blue text-white shadow-glow-blue flex items-center gap-2">
+          <span>📊 Gráfica €/m² & Comparador Albacete</span>
+          <span class="bg-brand-emerald text-slate-950 font-extrabold text-[10px] px-2 py-0.5 rounded-full">Activo</span>
+        </button>
+        <button onclick="cambiarPestanaModulo('cartera')" id="btn-tab-cartera" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 flex items-center gap-2">
           <span>🏠 Cartera Real Izon vs Idealista</span>
           <span class="bg-white/20 text-white text-[10px] px-2 py-0.5 rounded-full">8 Inmuebles</span>
         </button>
-        <button onclick="cambiarPestanaModulo('grafica')" id="btn-tab-grafica" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 flex items-center gap-2">
-          <span>📊 Gráfica €/m² (Izon vs Mercado)</span>
-        </button>
         <button onclick="cambiarPestanaModulo('buscador')" id="btn-tab-buscador" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 flex items-center gap-2">
-          <span>🔍 Buscador en Directo API Idealista</span>
+          <span>🔍 Radar API Idealista (Panel Asesor)</span>
           <span class="w-2 h-2 rounded-full bg-brand-emerald animate-pulse"></span>
         </button>
       </div>
 
-      <!-- VISTA 1: CARTERA REAL IZON CONSULTING CON COMPARATIVA IDEALISTA -->
-      <div id="vista-cartera" class="space-y-6">
+      <!-- VISTA 1 (PREDETERMINADA): GRÁFICA COMPARATIVA INTERACTIVA €/m² ALBACETE CAPITAL -->
+      <div id="vista-grafica" class="space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Columna Izquierda: Gráfica de Barras Dinámica (7 cols) -->
+          <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-slate-800">
+              <div>
+                <span class="text-xs uppercase font-bold tracking-wider text-brand-gold">Muestra Albacete Capital</span>
+                <h3 class="text-lg sm:text-xl font-bold text-white font-display mt-0.5">Precio €/m²: Izon vs Media Idealista</h3>
+              </div>
+              
+              <!-- Leyenda -->
+              <div class="flex items-center gap-4 text-xs bg-slate-900/90 px-3 py-1.5 rounded-xl border border-slate-800">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-3 h-3 rounded bg-brand-blue"></span>
+                  <span class="text-white font-semibold">Izon (€/m²)</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <span class="w-3 h-3 rounded bg-brand-amber"></span>
+                  <span class="text-slate-300 font-semibold">Idealista (€/m²)</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-400 mb-4">
+              Haz clic en cualquier distrito de Albacete para ver el cálculo de ahorro y el comportamiento del algoritmo:
+            </p>
+
+            <!-- Contenedor dinámico de barras por distrito -->
+            <div class="space-y-3.5" id="contenedor-barras-grafica">
+              <!-- Renderizado dinámicamente con JS -->
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap items-center justify-between text-[11px] text-slate-400 gap-2">
+              <span>Basado en los inmuebles en cartera de Izon y 1.163 testigos de Idealista</span>
+              <span class="text-brand-emerald font-semibold flex items-center gap-1">
+                <span class="w-2 h-2 rounded-full bg-brand-emerald"></span> Albacete Capital
+              </span>
+            </div>
+          </div>
+
+          <!-- Columna Derecha: Inspector Interactivo de la Zona Seleccionada (5 cols) -->
+          <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+              <span class="text-xs font-bold text-brand-blueAccent uppercase tracking-wider">Simulador de Decisión IA</span>
+              <span id="badge-estado-algoritmo" class="px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30">
+                🔥 Oportunidad Inversora
+              </span>
+            </div>
+
+            <div id="inspector-zona-detalle">
+              <!-- Renderizado dinámicamente con JS -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- VISTA 2: CARTERA REAL IZON CONSULTING CON COMPARATIVA IDEALISTA -->
+      <div id="vista-cartera" class="hidden space-y-6">
         
         <!-- Filtros Rápidos de Zona para la Cartera -->
         <div class="flex flex-wrap items-center justify-between gap-3 p-4 bg-slate-900/80 rounded-2xl border border-slate-800 text-xs">
@@ -516,51 +608,18 @@
 
       </div>
 
-      <!-- VISTA 2: GRÁFICA COMPARATIVA DE VALOR POR M2 (IZON VS IDEALISTA) -->
-      <div id="vista-grafica" class="hidden">
-        <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl">
-          
-          <div class="flex flex-wrap items-center justify-between gap-4 mb-8 pb-6 border-b border-slate-800">
-            <div>
-              <span class="text-xs uppercase font-bold tracking-wider text-brand-gold">Auditoría de Competitividad</span>
-              <h3 class="text-xl sm:text-2xl font-bold text-white font-display mt-1">Comparativa de Precio por m² en Albacete</h3>
-              <p class="text-xs text-slate-400 mt-1">Contraste de los inmuebles en cartera de Izon Consulting vs la media oficial de Idealista en cada barrio.</p>
-            </div>
-            
-            <!-- Leyenda -->
-            <div class="flex items-center gap-5 text-xs bg-slate-900/90 px-4 py-2 rounded-xl border border-slate-800">
-              <div class="flex items-center gap-2">
-                <span class="w-3.5 h-3.5 rounded bg-brand-blue"></span>
-                <span class="text-white font-semibold">Izon Consulting (€/m²)</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="w-3.5 h-3.5 rounded bg-brand-amber"></span>
-                <span class="text-slate-300 font-semibold">Media Idealista (€/m²)</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Gráfica de Barras Interactiva -->
-          <div class="space-y-6" id="contenedor-barras-grafica">
-            <!-- Renderizado dinámicamente con JS -->
-          </div>
-
-          <!-- Conclusión Estratégica -->
-          <div class="mt-8 p-4 rounded-2xl bg-brand-emerald/10 border border-brand-emerald/30 flex items-start gap-3">
-            <span class="text-brand-emerald text-lg font-bold">💡</span>
-            <div class="text-xs text-slate-200">
-              <strong class="text-white block font-semibold mb-0.5">Ventaja de Venta Inmediata para Izon Consulting:</strong>
-              En zonas clave como <strong>Villacerrada</strong> y <strong>Zona Industria</strong>, los inmuebles de Izon se sitúan entre un <strong>7% y un 14% por debajo de la media de mercado</strong>. Demostrar este dato en el primer contacto de WhatsApp o en la ficha técnica acelera las decisiones de los compradores y evita regateos.
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- VISTA 3: BUSCADOR EN DIRECTO DE LA API DE IDEALISTA -->
+      <!-- VISTA 3: BUSCADOR EN DIRECTO DE LA API DE IDEALISTA (PANEL INTERNO DEL ASESOR) -->
       <div id="vista-buscador" class="hidden">
         <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-2xl mb-8">
           
+          <div class="p-3.5 mb-6 rounded-2xl bg-brand-blue/10 border border-brand-blue/30 text-xs text-slate-300 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="text-brand-blueAccent font-bold text-sm">💼 Panel Exclusivo para el Asesor de Izon:</span>
+              <span>Esta búsqueda conecta en directo con la API de Idealista para tasar inmuebles y estudiar testigos de mercado.</span>
+            </div>
+            <span class="px-2 py-0.5 rounded bg-brand-emerald/20 text-brand-emerald text-[10px] font-bold">API Conectada</span>
+          </div>
+
           <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
             <div class="md:col-span-5">
               <label for="input-search-location" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
@@ -968,15 +1027,178 @@
       }
     ];
 
-    // --- DATOS PARA LA GRÁFICA COMPARATIVA (€/m²) ---
+    // --- DATOS REALES & DEMO DE ALBACETE CAPITAL PARA LA GRÁFICA COMPARATIVA (€/m²) ---
+    let zonaSeleccionadaId = "villacerrada";
+    let modoAntiFuga = "comprador"; // 'comprador' o 'asesor'
+
     const DATOS_GRAFICA = [
-      { barrio: "Villacerrada / Centro", izonM2: 1321, idealistaM2: 1540, diff: -14 },
-      { barrio: "Carretera de Jaén", izonM2: 1071, idealistaM2: 1250, diff: -14 },
-      { barrio: "Industria - Catedral", izonM2: 1507, idealistaM2: 1620, diff: -7 },
-      { barrio: "Ensanche - Rosario", izonM2: 1711, idealistaM2: 1780, diff: -4 },
-      { barrio: "Campus - Medicina", izonM2: 1859, idealistaM2: 1920, diff: -3 },
-      { barrio: "Plaza del Altozano", izonM2: 2375, idealistaM2: 2450, diff: -3 }
+      {
+        id: "villacerrada",
+        barrio: "Villacerrada / Centro",
+        izonM2: 1321,
+        idealistaM2: 1540,
+        diff: -14.2,
+        ahorroEuros: 36135,
+        propiedadIzon: {
+          titulo: "Piso Céntrico en Villacerrada (165 m²)",
+          precio: 218000,
+          size: 165,
+          rooms: 4,
+          bathrooms: 2,
+          foto: "https://www.izonconsulting.es/wp-content/uploads/2025/10/15-1-818x540.jpg",
+          url: "https://www.izonconsulting.es/listings/piso-centrico-en-villacerrada-4-dormitorios-y-dos-banos-piso/"
+        },
+        esOportunidad: true,
+        argumentoVenta: "Este piso en Villacerrada está un 14.2% por debajo de la media registrada en Idealista para la misma zona. Representa un ahorro directo de 36.135 € frente al mercado.",
+        alertaAsesor: "Propiedad estrella de alta liquidez. Recomendado utilizar el sello de tasación de mercado para cerrar con inversores que buscan rentabilidad neta superior al 7%."
+      },
+      {
+        id: "jaen",
+        barrio: "Carretera de Jaén",
+        izonM2: 1071,
+        idealistaM2: 1250,
+        diff: -14.3,
+        ahorroEuros: 50120,
+        propiedadIzon: {
+          titulo: "Chalet / Parcela única (280 m²)",
+          precio: 300000,
+          size: 280,
+          rooms: 5,
+          bathrooms: 3,
+          foto: "https://www.izonconsulting.es/wp-content/uploads/2025/11/7-1-818x540.jpg",
+          url: "https://www.izonconsulting.es/listings/parcela-unica-en-la-zona-de-la-carretera-de-jaen-ideal-para-vivir-todo-el-ano-chalet/"
+        },
+        esOportunidad: true,
+        argumentoVenta: "Chalet independiente a 1.071 €/m² frente a los 1.250 €/m² de media en Idealista Albacete. Más de 50.000 € de ventaja patrimonial con piscina y terreno para todo el año.",
+        alertaAsesor: "Muy competitivo frente a otros chalets de la zona sur. Perfecto para familias que buscan espacio sin pagar sobreprecio de obra nueva."
+      },
+      {
+        id: "industria",
+        barrio: "Industria - Catedral",
+        izonM2: 1507,
+        idealistaM2: 1620,
+        diff: -7.0,
+        ahorroEuros: 15820,
+        propiedadIzon: {
+          titulo: "Vivienda 4 dormitorios Zona Industria (140 m²)",
+          precio: 211000,
+          size: 140,
+          rooms: 4,
+          bathrooms: 2,
+          foto: "https://www.izonconsulting.es/wp-content/uploads/2025/11/4-1-818x540.jpg",
+          url: "https://www.izonconsulting.es/listings/vivienda-de-4-dormitorios-y-dos-banos-zona-industria-catedral-piso/"
+        },
+        esOportunidad: true,
+        argumentoVenta: "Piso amplio de 4 habitaciones a 1.507 €/m², situado un 7% por debajo del promedio de Idealista en Industria (1.620 €/m²).",
+        alertaAsesor: "Zona de altísima demanda residencial familiar. Precio equilibrado para cerrar visita en primera semana de publicación."
+      },
+      {
+        id: "ensanche",
+        barrio: "Ensanche - Calle Rosario",
+        izonM2: 1711,
+        idealistaM2: 1780,
+        diff: -3.9,
+        ahorroEuros: 7659,
+        propiedadIzon: {
+          titulo: "Estupendo piso junto al Rosario (111 m²)",
+          precio: 190000,
+          size: 111,
+          rooms: 3,
+          bathrooms: 2,
+          foto: "https://www.izonconsulting.es/wp-content/uploads/2025/11/3-1-818x540.jpg",
+          url: "https://www.izonconsulting.es/listings/estupendo-piso-junto-al-rosario-piso/"
+        },
+        esOportunidad: true,
+        argumentoVenta: "Vivienda prime en el Ensanche a 1.711 €/m², ajustada por debajo de la media de mercado (1.780 €/m²). Garantía de inversión segura.",
+        alertaAsesor: "El Ensanche es el barrio con mayor rotación de Albacete. El precio está en el punto exacto para no sufrir regateos en la negociación."
+      },
+      {
+        id: "medicina",
+        barrio: "Campus - Facultad Medicina",
+        izonM2: 1859,
+        idealistaM2: 1920,
+        diff: -3.2,
+        ahorroEuros: 19520,
+        propiedadIzon: {
+          titulo: "Adosado de Lujo en Medicina con Piscina (320 m²)",
+          precio: 595000,
+          size: 320,
+          rooms: 5,
+          bathrooms: 4,
+          foto: "https://www.izonconsulting.es/wp-content/uploads/2025/10/15-1-818x540.jpg",
+          url: "https://www.izonconsulting.es/listings/espectacular-adosado-en-medicina-de-5-dormitorios-y-4-banos-con-piscina-adosado/"
+        },
+        esOportunidad: true,
+        argumentoVenta: "Adosado exclusivo a 1.859 €/m² con piscina privada en la zona más moderna de Albacete, con ahorro frente a promociones equivalentes.",
+        alertaAsesor: "Target comprador de alto poder adquisitivo (médicos, profesores universitarios). Destacar piscina privada y eficiencia energética."
+      },
+      {
+        id: "altozano",
+        barrio: "Plaza del Altozano / Centro",
+        izonM2: 2375,
+        idealistaM2: 2450,
+        diff: -3.1,
+        ahorroEuros: 12000,
+        propiedadIzon: {
+          titulo: "Vivienda Exclusiva junto al Altozano (160 m²)",
+          precio: 380000,
+          size: 160,
+          rooms: 4,
+          bathrooms: 2,
+          foto: "https://www.izonconsulting.es/wp-content/uploads/2024/08/1-1-818x540.jpg",
+          url: "https://www.izonconsulting.es/listings/quieres-vivir-junto-al-altozano-no-lo-dudes-visitanos-piso/"
+        },
+        esOportunidad: true,
+        argumentoVenta: "Ubicación insustituible en el centro neurálgico de Albacete. 2.375 €/m² en exclusiva y sin primas especulativas sobre Idealista.",
+        alertaAsesor: "Propiedad insignia en exclusiva. Usar el informe de testigos para justificar solvencia ante ofertas a la baja."
+      },
+      {
+        id: "demo_sobreprecio",
+        barrio: "Piso Ejemplo Particular (Sobreprecio)",
+        izonM2: 2150,
+        idealistaM2: 1620,
+        diff: 32.7,
+        ahorroEuros: 0,
+        propiedadIzon: {
+          titulo: "Piso Particular sin Asesoramiento (110 m²)",
+          precio: 236500,
+          size: 110,
+          rooms: 3,
+          bathrooms: 1,
+          foto: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&auto=format&fit=crop&q=80",
+          url: "#"
+        },
+        esOportunidad: false,
+        argumentoVenta: "🔒 FILTRO ACTIVADO: Como el precio está un 32% por encima de Idealista, el bot NO muestra datos de mercado al comprador para evitar que se fugue. La IA se enfoca exclusivamente en calidades y luz natural.",
+        alertaAsesor: "🚨 ALERTA ASESOR: El particular pide un 32% más que la media de la zona. Se genera automáticamente el dossier de Idealista para convencer al propietario de rebajar a 178.000 € y captar la exclusiva."
+      }
     ];
+
+    // --- CAMBIAR MODO ANTI-FUGA (COMPRADOR VS ASESOR) ---
+    function cambiarModoAntiFuga(modo) {
+      modoAntiFuga = modo;
+      const btnComp = document.getElementById('btn-modo-comprador');
+      const btnAses = document.getElementById('btn-modo-asesor');
+
+      if (modo === 'comprador') {
+        btnComp.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-brand-emerald text-slate-950 shadow-glow-emerald flex items-center justify-center gap-2';
+        btnAses.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 flex items-center justify-center gap-2';
+      } else {
+        btnAses.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition-all bg-brand-blue text-white shadow-glow-blue flex items-center justify-center gap-2';
+        btnComp.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition-all bg-slate-900 hover:bg-slate-800 text-slate-300 flex items-center justify-center gap-2';
+      }
+
+      const item = DATOS_GRAFICA.find(d => d.id === zonaSeleccionadaId) || DATOS_GRAFICA[0];
+      renderizarInspectorZona(item);
+    }
+
+    // --- SELECCIONAR ZONA EN LA GRÁFICA ---
+    function seleccionarZonaGrafica(id) {
+      zonaSeleccionadaId = id;
+      renderizarGraficaComparativa();
+      const item = DATOS_GRAFICA.find(d => d.id === id) || DATOS_GRAFICA[0];
+      renderizarInspectorZona(item);
+    }
 
     // --- CAMBIAR PESTAÑAS DEL MÓDULO ---
     function cambiarPestanaModulo(pestana) {
@@ -984,24 +1206,210 @@
       document.getElementById('vista-grafica').classList.add('hidden');
       document.getElementById('vista-buscador').classList.add('hidden');
 
-      const tabs = ['cartera', 'grafica', 'buscador'];
+      const tabs = ['grafica', 'cartera', 'buscador'];
       tabs.forEach(t => {
         const btn = document.getElementById('btn-tab-' + t);
-        btn.classList.remove('bg-brand-blue', 'text-white', 'shadow-glow-blue');
-        btn.classList.add('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+        if (btn) {
+          btn.classList.remove('bg-brand-blue', 'text-white', 'shadow-glow-blue');
+          btn.classList.add('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+        }
       });
 
       const activeBtn = document.getElementById('btn-tab-' + pestana);
-      activeBtn.classList.remove('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
-      activeBtn.classList.add('bg-brand-blue', 'text-white', 'shadow-glow-blue');
+      if (activeBtn) {
+        activeBtn.classList.remove('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+        activeBtn.classList.add('bg-brand-blue', 'text-white', 'shadow-glow-blue');
+      }
 
-      document.getElementById('vista-' + pestana).classList.remove('hidden');
+      const targetView = document.getElementById('vista-' + pestana);
+      if (targetView) targetView.classList.remove('hidden');
 
       if (pestana === 'grafica') {
         renderizarGraficaComparativa();
+        const item = DATOS_GRAFICA.find(d => d.id === zonaSeleccionadaId) || DATOS_GRAFICA[0];
+        renderizarInspectorZona(item);
+      } else if (pestana === 'cartera') {
+        renderizarCarteraIzon(CARTERA_IZON);
       } else if (pestana === 'buscador') {
         ejecutarBusquedaRealIdealista();
       }
+    }
+
+    // --- RENDERIZAR GRÁFICA COMPARATIVA (€/m²) ---
+    function renderizarGraficaComparativa() {
+      const container = document.getElementById('contenedor-barras-grafica');
+      if (!container) return;
+      const maxVal = 2600; // Escala máxima de referencia en Albacete
+
+      container.innerHTML = DATOS_GRAFICA.map(item => {
+        const izonPct = Math.min(100, Math.round((item.izonM2 / maxVal) * 100));
+        const idealistaPct = Math.min(100, Math.round((item.idealistaM2 / maxVal) * 100));
+        const diff = item.diff;
+        const isSelected = item.id === zonaSeleccionadaId;
+        const isSpecialDemo = item.id === 'demo_sobreprecio';
+
+        return `
+          <div onclick="seleccionarZonaGrafica('${item.id}')" class="cursor-pointer p-3 sm:p-3.5 rounded-2xl transition-all border ${isSelected ? 'bg-slate-900/90 border-brand-blue ring-2 ring-brand-blue/30 shadow-lg' : 'bg-slate-900/40 border-slate-800 hover:bg-slate-900 hover:border-slate-700'}">
+            
+            <div class="flex items-center justify-between text-xs mb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full ${isSelected ? 'bg-brand-blue animate-ping' : 'bg-slate-600'}"></span>
+                <span class="font-bold text-white text-xs sm:text-sm ${isSelected ? 'text-brand-blueAccent' : ''}">${item.barrio}</span>
+                ${isSpecialDemo ? '<span class="text-[9px] bg-red-500/20 text-red-400 px-1.5 py-0.5 rounded font-bold">Caso Test Sobreprecio</span>' : ''}
+              </div>
+              
+              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold ${diff < 0 ? 'bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30' : 'bg-red-500/15 text-red-400 border border-red-500/30'}">
+                ${diff < 0 ? `🔥 Ahorro: ${Math.abs(diff)}% vs Idealista` : `⚠️ +${diff}% sobre mercado`}
+              </span>
+            </div>
+
+            <!-- Barras Comparativas -->
+            <div class="space-y-1.5">
+              <!-- Barra Izon -->
+              <div>
+                <div class="flex justify-between text-[11px] text-slate-300 mb-0.5">
+                  <span class="flex items-center gap-1.5 font-medium">
+                    <span class="w-2 h-2 rounded-full ${diff < 0 ? 'bg-brand-blue' : 'bg-red-400'}"></span>
+                    ${isSpecialDemo ? 'Precio Particular:' : 'Izon Consulting:'}
+                  </span>
+                  <strong class="${diff < 0 ? 'text-brand-blueAccent' : 'text-red-400'} font-mono">${item.izonM2.toLocaleString('es-ES')} €/m²</strong>
+                </div>
+                <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full ${diff < 0 ? 'bg-gradient-to-r from-brand-blue to-sky-400' : 'bg-gradient-to-r from-red-500 to-amber-500'} rounded-full chart-bar" style="width: ${izonPct}%;"></div>
+                </div>
+              </div>
+
+              <!-- Barra Idealista -->
+              <div>
+                <div class="flex justify-between text-[11px] text-slate-400 mb-0.5">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-brand-amber"></span>
+                    Media Idealista Albacete:
+                  </span>
+                  <strong class="text-brand-gold font-mono">${item.idealistaM2.toLocaleString('es-ES')} €/m²</strong>
+                </div>
+                <div class="w-full h-2.5 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-gradient-to-r from-amber-600 to-brand-amber rounded-full chart-bar" style="width: ${idealistaPct}%;"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        `;
+      }).join('');
+    }
+
+    // --- RENDERIZAR INSPECTOR DE LA ZONA SELECCIONADA ---
+    function renderizarInspectorZona(item) {
+      const container = document.getElementById('inspector-zona-detalle');
+      const badgeAlgoritmo = document.getElementById('badge-estado-algoritmo');
+      if (!container) return;
+
+      const p = item.propiedadIzon;
+      const isOportunidad = item.esOportunidad;
+
+      // Actualizar badge superior
+      if (badgeAlgoritmo) {
+        if (isOportunidad) {
+          badgeAlgoritmo.className = "px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-brand-emerald/15 text-brand-emerald border border-brand-emerald/30";
+          badgeAlgoritmo.textContent = `🔥 Oportunidad: ${Math.abs(item.diff)}% vs Idealista`;
+        } else {
+          badgeAlgoritmo.className = "px-2.5 py-0.5 rounded-full text-[11px] font-extrabold bg-red-500/15 text-red-400 border border-red-500/30";
+          badgeAlgoritmo.textContent = `🔒 Comparativa Oculta al Comprador`;
+        }
+      }
+
+      container.innerHTML = `
+        <div class="space-y-4">
+          
+          <!-- Inmueble Referencia -->
+          <div class="bg-slate-900/90 rounded-2xl overflow-hidden border border-slate-800">
+            <div class="relative h-32 overflow-hidden bg-slate-950">
+              <img src="${p.foto}" alt="${p.titulo}" class="w-full h-full object-cover">
+              <div class="absolute bottom-2 left-2 bg-slate-950/80 backdrop-blur-md px-2 py-0.5 rounded text-[10px] text-white font-semibold border border-white/10">
+                ${item.barrio}
+              </div>
+              <div class="absolute top-2 right-2 bg-slate-950/80 backdrop-blur-md px-2 py-0.5 rounded text-[11px] text-white font-bold border border-white/10">
+                ${p.precio.toLocaleString('es-ES')} €
+              </div>
+            </div>
+            <div class="p-3">
+              <h5 class="text-white font-bold text-xs line-clamp-1">${p.titulo}</h5>
+              <div class="flex items-center gap-3 text-[11px] text-slate-300 mt-1">
+                <span>📐 <strong>${p.size} m²</strong></span>
+                <span>•</span>
+                <span>🛏 <strong>${p.rooms} hab</strong></span>
+                <span>•</span>
+                <span>🚿 <strong>${p.bathrooms} baños</strong></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Métricas de Mercado -->
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Precio Izon / m²:</span>
+              <span class="text-base font-extrabold ${isOportunidad ? 'text-brand-blueAccent' : 'text-red-400'} font-mono">${item.izonM2.toLocaleString('es-ES')} €</span>
+            </div>
+            <div class="bg-slate-900/90 p-3 rounded-xl border border-slate-800">
+              <span class="text-slate-400 block text-[10px] uppercase font-semibold">Media Idealista Zona:</span>
+              <span class="text-base font-extrabold text-brand-gold font-mono">${item.idealistaM2.toLocaleString('es-ES')} €</span>
+            </div>
+          </div>
+
+          <!-- Cuadro de Decisión del Algoritmo Anti-Fuga -->
+          <div class="p-4 rounded-2xl ${modoAntiFuga === 'comprador' ? (isOportunidad ? 'bg-brand-emerald/10 border border-brand-emerald/30' : 'bg-amber-500/10 border border-amber-500/30') : 'bg-brand-blue/10 border border-brand-blue/30'} text-xs space-y-2">
+            
+            <div class="flex items-center justify-between">
+              <span class="font-bold ${modoAntiFuga === 'comprador' ? (isOportunidad ? 'text-brand-emerald' : 'text-amber-400') : 'text-brand-blueAccent'} uppercase text-[10px] tracking-wider">
+                ${modoAntiFuga === 'comprador' ? (isOportunidad ? '✓ Gatillo de Venta WhatsApp (Autorizado)' : '🔒 Escudo Anti-Fuga (Comparativa Bloqueada)') : '💼 Herramienta Interna de Asesor'}
+              </span>
+              <span class="text-[10px] text-slate-400">
+                ${modoAntiFuga === 'comprador' ? 'Vista Comprador' : 'Vista Lucía / Antonio'}
+              </span>
+            </div>
+
+            ${modoAntiFuga === 'comprador' ? (
+              isOportunidad ? `
+                <p class="text-slate-200 text-[11px] leading-relaxed">
+                  <strong>Comportamiento de la IA:</strong> Al ser un precio un <strong>${Math.abs(item.diff)}% más bajo que Idealista</strong>, la IA utiliza este dato como argumento de urgencia y ahorro real (<strong class="text-brand-emerald">${item.ahorroEuros.toLocaleString('es-ES')} € de ahorro estimado</strong>).
+                </p>
+                <div class="p-2.5 rounded-xl bg-slate-950/80 border border-brand-emerald/30 font-mono text-[10px] text-emerald-300">
+                  "💬 Hola Carlos, este piso en ${item.barrio} está un ${Math.abs(item.diff)}% por debajo de la media de Idealista en su zona. Ahorras ${item.ahorroEuros.toLocaleString('es-ES')} € respecto al mercado medio..."
+                </div>
+                <p class="text-[10px] text-slate-400">🛡️ <em>Protegido: Ningún enlace hacia portales competidores es facilitado.</em></p>
+              ` : `
+                <p class="text-slate-200 text-[11px] leading-relaxed">
+                  <strong>Comportamiento de la IA:</strong> Como el inmueble está sobre mercado, <strong>la IA NO menciona a Idealista</strong> para evitar que el comprador compare y se marche.
+                </p>
+                <div class="p-2.5 rounded-xl bg-slate-950/80 border border-amber-500/30 font-mono text-[10px] text-amber-200">
+                  "💬 Hola Carlos, esta vivienda destaca por su luz natural y excelente ubicación céntrica. ¿Quieres que te envíe los planos completos?"
+                </div>
+                <p class="text-[10px] text-emerald-400 font-semibold">✓ El cliente permanece en el funnel de Izon sin fuga.</p>
+              `
+            ) : `
+              <p class="text-slate-200 text-[11px] leading-relaxed">
+                ${item.alertaAsesor}
+              </p>
+              <div class="p-2.5 rounded-xl bg-slate-950/80 border border-brand-blue/30 font-mono text-[10px] text-sky-200">
+                ${isOportunidad ? 
+                  `"Dossier de Inversión disponible: Tasación ${item.izonM2} €/m² vs Idealista ${item.idealistaM2} €/m². Ideal para justificar precio sin rebaja."` : 
+                  `"Argumentario de Captación: Mostrar al propietario que su precio (+${item.diff}%) quemará la vivienda. Objetivo de captación: 178.000 €."`
+                }
+              </div>
+            `}
+
+          </div>
+
+          ${p.url !== '#' ? `
+            <a href="${p.url}" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-brand-blueAccent hover:text-white border border-slate-700 font-semibold text-xs transition-all flex items-center justify-center gap-1.5">
+              <span>Ver Ficha Oficial en Izon Consulting</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          ` : ''}
+
+        </div>
+      `;
     }
 
     // --- RENDERIZAR CARTERA DE IZON CONSULTING ---
@@ -1502,8 +1910,9 @@ Indícame cuál de estos horarios prefieres y tu número de teléfono para dejar
       // 1. Cargar Cartera Real de Izon
       renderizarCarteraIzon(CARTERA_IZON);
 
-      // 2. Preparar Gráfica
+      // 2. Preparar Gráfica & Inspector Interactivo de Albacete
       renderizarGraficaComparativa();
+      renderizarInspectorZona(DATOS_GRAFICA[0]);
 
       // 3. Botón WhatsApp
       const shareBtn = document.getElementById('btn-share-whatsapp');
