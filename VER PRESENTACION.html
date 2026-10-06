@@ -956,39 +956,71 @@
       const t0 = performance.now();
 
       try {
-        // 1. Llamada a smart-search
-        const smartUrl = `https://${RAPIDAPI_HOST}/smart-search?search_text=${encodeURIComponent(query)}&country=es&search_type=${operation}&property_type=homes`;
-        const resSmart = await fetch(smartUrl, {
-          headers: {
-            "x-rapidapi-key": RAPIDAPI_KEY,
-            "x-rapidapi-host": RAPIDAPI_HOST
+        const headers = {
+          "x-rapidapi-key": RAPIDAPI_KEY,
+          "x-rapidapi-host": RAPIDAPI_HOST
+        };
+
+        let locId = null;
+        let locName = query;
+        let totalInmuebles = 0;
+
+        // 1A. Intentar primero con /auto-complete (siempre devuelve locationId limpios)
+        try {
+          const resAuto = await fetch(`https://${RAPIDAPI_HOST}/auto-complete?location_name=${encodeURIComponent(query)}&country=es`, { headers });
+          if (resAuto.ok) {
+            const dataAuto = await resAuto.json();
+            const valid = dataAuto?.data?.locations?.find(l => l.locationId);
+            if (valid) {
+              locId = valid.locationId;
+              locName = valid.name;
+              totalInmuebles = valid.total || 0;
+            }
           }
-        });
+        } catch (e) {}
 
-        if (!resSmart.ok) {
-          throw new Error(`Error ${resSmart.status} en smart-search: ${resSmart.statusText}`);
+        // 1B. Si no, intentar con /smart-search
+        if (!locId) {
+          const resSmart = await fetch(`https://${RAPIDAPI_HOST}/smart-search?search_text=${encodeURIComponent(query)}&country=es&search_type=${operation}&property_type=homes`, { headers });
+          if (resSmart.ok) {
+            const dataSmart = await resSmart.json();
+            const valid = dataSmart?.data?.results?.find(r => r.locationId);
+            if (valid) {
+              locId = valid.locationId;
+              locName = valid.name;
+              totalInmuebles = valid.total || 0;
+            }
+          }
         }
 
-        const dataSmart = await resSmart.json();
-        const results = dataSmart?.data?.results || [];
-
-        if (!results.length) {
-          throw new Error(`No se encontró ninguna ubicación oficial en Idealista para "${query}".`);
+        // 1C. Fallback: buscar por la ciudad principal si era una frase compuesta (ej: "Ensanche Albacete" -> "Albacete")
+        if (!locId) {
+          const words = query.trim().split(/\s+/);
+          if (words.length > 1) {
+            const lastWord = words[words.length - 1];
+            const resAutoFallback = await fetch(`https://${RAPIDAPI_HOST}/auto-complete?location_name=${encodeURIComponent(lastWord)}&country=es`, { headers });
+            if (resAutoFallback.ok) {
+              const dataFallback = await resAutoFallback.json();
+              const validFallback = dataFallback?.data?.locations?.find(l => l.locationId);
+              if (validFallback) {
+                locId = validFallback.locationId;
+                locName = `${query} (${validFallback.name})`;
+                totalInmuebles = validFallback.total || 0;
+              }
+            }
+          }
         }
 
-        const locationObj = results[0];
-        statusMsg.textContent = `Paso 2/2: Ubicación identificada: "${locationObj.name}". Obteniendo inmuebles reales...`;
+        if (!locId) {
+          throw new Error(`No se pudo resolver "${query}" a un código de ubicación oficial.`);
+        }
 
-        // 2. Llamada a property-search con el locationId oficial
-        const locId = locationObj.locationId;
+        const locationObj = { name: locName, locationId: locId, total: totalInmuebles, subTypeText: "Oficial Idealista" };
+        statusMsg.textContent = `Paso 2/2: Ubicación identificada: "${locName}". Descargando inmuebles en vivo...`;
+
+        // 2. Llamada a /property-search
         const searchUrl = `https://${RAPIDAPI_HOST}/property-search?location_ids=${encodeURIComponent(locId)}&country=es&search_type=${operation}&property_type=homes&result_count=${resultCount}`;
-
-        const resProps = await fetch(searchUrl, {
-          headers: {
-            "x-rapidapi-key": RAPIDAPI_KEY,
-            "x-rapidapi-host": RAPIDAPI_HOST
-          }
-        });
+        const resProps = await fetch(searchUrl, { headers });
 
         if (!resProps.ok) {
           throw new Error(`Error ${resProps.status} en property-search`);
