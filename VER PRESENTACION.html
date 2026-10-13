@@ -10,6 +10,7 @@
   <meta property="og:title" content="Izon Consulting × Cartera Inteligente & Comparador Idealista">
   <meta property="og:description" content="Compara en tiempo real los inmuebles de Izon Consulting contra el mercado de Idealista, analiza la gráfica de €/m² y prueba el chatbot 24/7.">
   <meta property="og:image" content="https://www.izonconsulting.es/wp-content/uploads/2019/03/logo-izon-consulting.png">
+  <meta property="og:url" content="https://devai82.github.io/altera-real-estate/">
   <meta property="og:type" content="website">
 
   <!-- Google Fonts -->
@@ -418,7 +419,10 @@
 
                 <div class="flex-1">
                   <div class="flex items-center justify-between text-xs text-slate-400 mb-1.5">
-                    <span class="font-medium text-slate-200">Voz Agente Virtual (Sofía - ElevenLabs)</span>
+                    <span class="font-medium text-slate-200 flex items-center gap-1.5">
+                      Voz Agente Virtual (Sofía)
+                      <span class="bg-indigo-950/80 text-sky-400 text-[10px] px-2 py-0.5 rounded border border-sky-500/30">✨ ElevenLabs HD (Sofía)</span>
+                    </span>
                     <span id="audio-time">0:00 / 0:18</span>
                   </div>
                   <div class="flex items-center gap-1 h-8 px-2 bg-slate-900 rounded-lg" id="waveform">
@@ -1702,12 +1706,60 @@
       }).join('');
     }
 
-    // --- REPRODUCTOR ELEVENLABS ---
+    // --- REPRODUCTOR ELEVENLABS (Sofía) ---
     let audioPlaying = false;
     let audioTimer = null;
     let audioSeconds = 0;
+    let currentElevenAudioRealEstate = null;
 
-    function toggleAudioDemo() {
+    async function speakWithElevenLabsRealEstate(text, onEndCallback = null) {
+      const apiKey = localStorage.getItem('elevenlabs_api_key');
+      if (!apiKey) return false;
+
+      const voiceId = localStorage.getItem('elevenlabs_voice_id_realestate') || 'uQw4jpKzMLrZuo0RLPS9'; // Laura / Sofía
+
+      try {
+        const res = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`, {
+          method: 'POST',
+          headers: {
+            'Accept': 'audio/mpeg',
+            'Content-Type': 'application/json',
+            'xi-api-key': apiKey
+          },
+          body: JSON.stringify({
+            text: text,
+            model_id: 'eleven_multilingual_v2',
+            voice_settings: { stability: 0.5, similarity_boost: 0.8 }
+          })
+        });
+
+        if (!res.ok) {
+          console.warn("ElevenLabs RealEstate notice:", res.status);
+          return false;
+        }
+
+        const blob = await res.blob();
+        const audioUrl = URL.createObjectURL(blob);
+        const audio = new Audio(audioUrl);
+        currentElevenAudioRealEstate = audio;
+
+        audio.onended = () => {
+          if (onEndCallback) onEndCallback();
+        };
+
+        audio.onerror = () => {
+          if (onEndCallback) onEndCallback();
+        };
+
+        await audio.play();
+        return true;
+      } catch (e) {
+        console.warn("ElevenLabs RealEstate fallback:", e);
+        return false;
+      }
+    }
+
+    async function toggleAudioDemo() {
       const iconPlay = document.getElementById('icon-play');
       const iconPause = document.getElementById('icon-pause');
       const timeSpan = document.getElementById('audio-time');
@@ -1720,17 +1772,28 @@
         iconPause.classList.remove('hidden');
         audioSeconds = 0;
 
-        transcription.innerHTML = `<strong>Sofía (ElevenLabs):</strong> "Hola, gracias por llamar a Izon Consulting en Albacete. En este momento nuestros asesores están fuera de oficina, pero puedo ayudarte a consultar cualquier vivienda de nuestra cartera o coordinar una visita para mañana. ¿Sobre qué piso deseas información?"`;
+        const demoText = "Hola, gracias por llamar a Izon Consulting en Albacete. En este momento nuestros asesores están fuera de oficina, pero puedo ayudarte a consultar cualquier vivienda de nuestra cartera o coordinar una visita para mañana. ¿Sobre qué piso deseas información?";
+        transcription.innerHTML = `<strong>Sofía (ElevenLabs):</strong> "${demoText}"`;
 
-        if ('speechSynthesis' in window) {
-          window.speechSynthesis.cancel();
-          const utterance = new SpeechSynthesisUtterance("Hola, gracias por llamar a Izon Consulting en Albacete. En este momento nuestros asesores están fuera de oficina, pero puedo ayudarte a consultar cualquier vivienda de nuestra cartera o coordinar una visita para mañana.");
-          utterance.lang = 'es-ES';
-          utterance.rate = 1.0;
-          utterance.pitch = 1.05;
-          window.speechSynthesis.speak(utterance);
+        // Intentar reproducción con ElevenLabs
+        const usedEleven = await speakWithElevenLabsRealEstate(demoText, () => {
+          stopAudioDemo();
+        });
+
+        // Si no hay ElevenLabs, usar síntesis del navegador
+        if (!usedEleven) {
+          if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(demoText);
+            utterance.lang = 'es-ES';
+            utterance.rate = 1.0;
+            utterance.pitch = 1.05;
+            utterance.onend = () => stopAudioDemo();
+            window.speechSynthesis.speak(utterance);
+          }
         }
 
+        clearInterval(audioTimer);
         audioTimer = setInterval(() => {
           audioSeconds++;
           const segStr = audioSeconds < 10 ? '0' + audioSeconds : audioSeconds;
@@ -1741,7 +1804,7 @@
             w.style.height = h + 'px';
           });
 
-          if (audioSeconds >= 18) stopAudioDemo();
+          if (audioSeconds >= 22) stopAudioDemo();
         }, 1000);
 
       } else {
@@ -1752,6 +1815,10 @@
     function stopAudioDemo() {
       audioPlaying = false;
       clearInterval(audioTimer);
+      if (currentElevenAudioRealEstate) {
+        try { currentElevenAudioRealEstate.pause(); } catch(e){}
+        currentElevenAudioRealEstate = null;
+      }
       if ('speechSynthesis' in window) window.speechSynthesis.cancel();
       document.getElementById('icon-play').classList.remove('hidden');
       document.getElementById('icon-pause').classList.add('hidden');
